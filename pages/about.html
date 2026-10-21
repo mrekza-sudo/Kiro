@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About Me — Reabetswe</title>
+  <meta name="description" content="Learn about Reabetswe, a third-year CS student passionate about software development, databases, networking, and continuous learning."/>
+  <meta name="theme-color" content="#07090F"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles/tokens.css"/>
+  <link rel="stylesheet" href="../styles/pages.css"/>
+</head>
+<body>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+<div class="scan-line" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nl-name">REABETSWE</span><span class="nl-dot">.</span><span class="nl-tld">DEV</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html"         class="nav-link">Home</a></li>
+      <li><a href="about.html"            class="nav-link">About</a></li>
+      <li><a href="skills.html"           class="nav-link">Skills</a></li>
+      <li><a href="projects.html"         class="nav-link">Projects</a></li>
+      <li><a href="lab.html"              class="nav-link">Code Lab</a></li>
+      <li><a href="experience.html"       class="nav-link">Journey</a></li>
+      <li><a href="contact.html"          class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+      <button class="nav-cmd-btn" data-cmd aria-label="Command palette (Ctrl+K)">⌘ <kbd class="cmd-kbd">⌃K</kbd></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="skills.html">Skills</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="lab.html">Code Lab</a></li>
+  <li><a href="experience.html">Journey</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul></div>
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true">
+  <div class="cmd-box">
+    <div class="cmd-input-row"><span class="cmd-icon">⌘</span><input type="text" class="cmd-input" id="cmdInput" placeholder="Go to page..." autocomplete="off" spellcheck="false"/></div>
+    <div class="cmd-results" id="cmdResults" role="listbox"></div>
+    <div class="cmd-footer"><span class="cmd-hint"><kbd class="cmd-key">↑↓</kbd> navigate</span><span class="cmd-hint"><kbd class="cmd-key">↵</kbd> open</span><span class="cmd-hint"><kbd class="cmd-key">Esc</kbd> close</span></div>
+  </div>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero" aria-label="Page title">
+  <div class="container">
+    <div class="eyebrow">01 / IDENTITY</div>
+    <h1 class="page-h1">More Than Just <span class="grad">Code.</span></h1>
+    <p class="page-lead">The person building things, and why it matters to them.</p>
+  </div>
+</section>
+
+<!-- About content -->
+<div class="page-body">
+  <div class="container">
+
+    <!-- Main grid -->
+    <div class="about-grid">
+      <div class="about-intro reveal">
+        <p>I'm Reabetswe — a third-year Computer Science student developing my skills through coursework, technical exploration, and hands-on projects. I'm passionate about understanding how software works at every level, from algorithms and data structures to networks and operating systems.</p>
+        <p>What draws me to technology is the combination of logic and creativity it requires. Writing code that actually solves a real problem — something a person can use — is genuinely satisfying. I find myself most energized when working through a problem that has multiple possible solutions.</p>
+        <p>I'm currently building practical skills in software development, refining my understanding of databases and networking, and working toward becoming a developer who builds things that are both functional and well-designed.</p>
+        <p><strong style="color:var(--c-white)">What I am currently learning:</strong> Deeper software engineering concepts, system design thinking, and applying algorithms to real scenarios beyond classroom exercises.</p>
+        <p><strong style="color:var(--c-white)">What I want to build:</strong> Software that solves real problems, is clean under the hood, and is genuinely useful to the people who use it.</p>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:8px;" data-cursor="CONNECT">GET IN TOUCH</a>
+      </div>
+
+      <div class="reveal" data-delay="100">
+        <div class="about-profile-card">
+          <div class="terminal-titlebar" style="border-radius:0;">
+            <span class="tb tb-r"></span><span class="tb tb-y"></span><span class="tb tb-g"></span>
+            <span class="term-title">developer_profile.json</span>
+          </div>
+          <div class="acp-body">
+            <div class="apc-row"><span class="apc-k">Name</span>      <span class="apc-v">Reabetswe</span></div>
+            <div class="apc-row"><span class="apc-k">Role</span>      <span class="apc-v">CS Student, Year 3</span></div>
+            <div class="apc-row"><span class="apc-k">Interests</span> <span class="apc-v">Software Dev, Databases, Networking, Systems</span></div>
+            <div class="apc-row"><span class="apc-k">Mindset</span>   <span class="apc-v">Continuous Learning</span></div>
+            <div class="apc-row"><span class="apc-k">Focus</span>     <span class="apc-v">Building Practical Projects</span></div>
+            <div class="apc-row"><span class="apc-k">Available</span> <span class="apc-v green">Open to opportunities</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What I Value -->
+    <div class="about-values reveal">
+      <div class="eyebrow" style="margin-bottom:24px;">WHAT I VALUE</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="val-icon">⚡</span>
+          <div class="val-title">Curiosity</div>
+          <p class="val-desc">Asking "why" before asking "how." The best technical decisions come from understanding the problem before reaching for a solution.</p>
+        </div>
+        <div class="value-card">
+          <span class="val-icon">◈</span>
+          <div class="val-title">Craftsmanship</div>
+          <p class="val-desc">Writing code that is readable, maintainable, and intentional. Quality isn't just about functionality — it's about clarity and care.</p>
+        </div>
+        <div class="value-card">
+          <span class="val-icon">⟳</span>
+          <div class="val-title">Growth</div>
+          <p class="val-desc">Learning from mistakes and actively improving. Every project is a chance to understand something more deeply than before.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Academic Journey -->
+    <div class="reveal" style="margin-bottom:64px;">
+      <div class="eyebrow" style="margin-bottom:28px;">ACADEMIC JOURNEY</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Year 1</div>
+          <div class="tl-title">CS Foundations</div>
+          <div class="tl-sub">[ Your Institution ]</div>
+          <p class="tl-desc">Introduction to programming, computer science fundamentals, discrete mathematics, and logical thinking.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Year 2</div>
+          <div class="tl-title">Core Computer Science</div>
+          <div class="tl-sub">[ Your Institution ]</div>
+          <p class="tl-desc">Data structures, algorithms, databases, web development, and systems programming fundamentals.</p>
+        </div>
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Year 3 — NOW</div>
+          <div class="tl-title">Advanced Studies</div>
+          <div class="tl-sub">[ Your Institution ]</div>
+          <p class="tl-desc">Advanced systems, networking, software engineering principles, and real-world project development.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-inner reveal">
+      <div class="cta-text">
+        <h2 style="font-size:1.6rem;">Want to know more?</h2>
+        <p>See my technical skills, explore my projects, or reach out directly.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="skills.html"   class="btn btn-primary">SEE MY SKILLS</a>
+        <a href="projects.html" class="btn btn-ghost">VIEW PROJECTS</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="footer-logo">REABETSWE<span class="tld">.DEV</span></div><div class="footer-tag">Engineered with curiosity.</div></div>
+      <nav class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="lab.html">Lab</a><a href="experience.html">Journey</a><a href="contact.html">Contact</a></nav>
+      <div class="footer-right"><div class="footer-status"><span class="footer-status-dot"></span> SYSTEM ONLINE</div><div class="footer-copy">&copy; 2026 REABETSWE</div><button class="back-top">↑ TOP</button></div>
+    </div>
+  </div>
+</footer>
+
+<div id="easterEgg" role="dialog" aria-modal="true"><div class="ee-content"><pre class="ee-pre">  ██████╗ ███████╗ █████╗ ██████╗
+  ██╔══██╗██╔════╝██╔══██╗██╔══██╗
+  ██████╔╝█████╗  ███████║██║  ██║
+  ██╔══██╗██╔══╝  ██╔══██║██║  ██║
+  ██║  ██║███████╗██║  ██║██████╔╝</pre><div class="ee-msg">🎮 You found it.</div><div class="ee-sub">↑ ↑ ↓ ↓ ← → ← → B A</div><div class="ee-sub" style="color:var(--c-mint)">Curiosity rewarded.</div><button class="ee-close" id="eeClose">← BACK</button></div></div>
+
+<script src="../scripts/core.js"></script>
+</body>
+</html>

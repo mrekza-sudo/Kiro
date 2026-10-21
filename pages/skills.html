@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Technical Skills — Reabetswe</title>
+  <meta name="description" content="Reabetswe's technical skills: Java, Python, C/C++, HTML/CSS/JS, SQL, Linux, Git, and more."/>
+  <meta name="theme-color" content="#07090F"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles/tokens.css"/>
+  <link rel="stylesheet" href="../styles/pages.css"/>
+</head>
+<body>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+<div class="scan-line" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nl-name">REABETSWE</span><span class="nl-dot">.</span><span class="nl-tld">DEV</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html"   class="nav-link">Home</a></li>
+      <li><a href="about.html"      class="nav-link">About</a></li>
+      <li><a href="skills.html"     class="nav-link">Skills</a></li>
+      <li><a href="projects.html"   class="nav-link">Projects</a></li>
+      <li><a href="lab.html"        class="nav-link">Code Lab</a></li>
+      <li><a href="experience.html" class="nav-link">Journey</a></li>
+      <li><a href="contact.html"    class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+      <button class="nav-cmd-btn" data-cmd aria-label="Command palette">⌘ <kbd class="cmd-kbd">⌃K</kbd></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><ul>
+  <li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li>
+  <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+  <li><a href="lab.html">Code Lab</a></li><li><a href="experience.html">Journey</a></li><li><a href="contact.html">Contact</a></li>
+</ul></div>
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true"><div class="cmd-box"><div class="cmd-input-row"><span class="cmd-icon">⌘</span><input type="text" class="cmd-input" id="cmdInput" placeholder="Go to page..." autocomplete="off" spellcheck="false"/></div><div class="cmd-results" id="cmdResults" role="listbox"></div><div class="cmd-footer"><span class="cmd-hint"><kbd class="cmd-key">↑↓</kbd></span><span class="cmd-hint"><kbd class="cmd-key">↵</kbd> open</span><span class="cmd-hint"><kbd class="cmd-key">Esc</kbd> close</span></div></div></div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">02 / CAPABILITIES</div>
+    <h1 class="page-h1">My Technical <span class="grad">Toolkit.</span></h1>
+    <p class="page-lead">Technologies and tools confirmed from my coursework and projects. Only what I actually know is listed here.</p>
+  </div>
+</section>
+
+<div class="page-body">
+  <div class="container">
+
+    <!-- Category filters -->
+    <div class="skills-cats reveal" role="tablist" aria-label="Skill categories">
+      <button class="sk-cat active" data-cat="all"     role="tab" aria-selected="true">All</button>
+      <button class="sk-cat"        data-cat="prog"    role="tab" aria-selected="false">Programming</button>
+      <button class="sk-cat"        data-cat="web"     role="tab" aria-selected="false">Web Dev</button>
+      <button class="sk-cat"        data-cat="db"      role="tab" aria-selected="false">Databases</button>
+      <button class="sk-cat"        data-cat="systems" role="tab" aria-selected="false">Systems</button>
+      <button class="sk-cat"        data-cat="tools"   role="tab" aria-selected="false">Tools</button>
+    </div>
+
+    <div class="skill-panels reveal">
+      <!-- ALL -->
+      <div class="skills-grid active" data-panel="all" role="tabpanel">
+        <div class="sk-card"><div class="sk-icon">☕</div><div><div class="sk-name">Java</div><div class="sk-sub">OOP · Console &amp; desktop apps · NetBeans</div></div></div>
+        <div class="sk-card"><div class="sk-icon">🐍</div><div><div class="sk-name">Python</div><div class="sk-sub">Scripting · General programming</div></div></div>
+        <div class="sk-card"><div class="sk-icon">©</div><div><div class="sk-name">C / C++</div><div class="sk-sub">Systems programming · Computer architecture</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⬡</div><div><div class="sk-name">HTML5</div><div class="sk-sub">Semantic markup · Accessibility</div></div></div>
+        <div class="sk-card"><div class="sk-icon">✦</div><div><div class="sk-name">CSS3</div><div class="sk-sub">Layouts · Animations · Responsive design</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⚡</div><div><div class="sk-name">JavaScript</div><div class="sk-sub">DOM · Logic · Interactivity</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⊕</div><div><div class="sk-name">SQL</div><div class="sk-sub">SELECT · JOIN · WHERE · Aggregation</div></div></div>
+        <div class="sk-card"><div class="sk-icon">◈</div><div><div class="sk-name">Database Design</div><div class="sk-sub">ERD · Normalization · Schema</div></div></div>
+        <div class="sk-card"><div class="sk-icon">🐧</div><div><div class="sk-name">Linux</div><div class="sk-sub">CLI · File system · Shell scripts</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⌬</div><div><div class="sk-name">Networking</div><div class="sk-sub">Protocols · Topologies · OSI model</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⚙</div><div><div class="sk-name">Computer Architecture</div><div class="sk-sub">Memory · CPU · Assembly basics</div></div></div>
+        <div class="sk-card"><div class="sk-icon">◷</div><div><div class="sk-name">Git &amp; GitHub</div><div class="sk-sub">Version control · Collaboration</div></div></div>
+        <div class="sk-card"><div class="sk-icon">◻</div><div><div class="sk-name">VS Code</div><div class="sk-sub">Primary editor · Extensions</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⊞</div><div><div class="sk-name">NetBeans</div><div class="sk-sub">Java IDE · Project management</div></div></div>
+      </div>
+      <!-- PROG -->
+      <div class="skills-grid" data-panel="prog" role="tabpanel">
+        <div class="sk-card"><div class="sk-icon">☕</div><div><div class="sk-name">Java</div><div class="sk-sub">Primary language · OOP · Console and desktop applications · Used in NetBeans</div></div></div>
+        <div class="sk-card"><div class="sk-icon">🐍</div><div><div class="sk-name">Python</div><div class="sk-sub">Scripting, exercises, and general-purpose programming</div></div></div>
+        <div class="sk-card"><div class="sk-icon">©</div><div><div class="sk-name">C / C++</div><div class="sk-sub">Systems programming and computer architecture coursework</div></div></div>
+      </div>
+      <!-- WEB -->
+      <div class="skills-grid" data-panel="web" role="tabpanel">
+        <div class="sk-card"><div class="sk-icon">⬡</div><div><div class="sk-name">HTML5</div><div class="sk-sub">Semantic markup, structure, accessibility</div></div></div>
+        <div class="sk-card"><div class="sk-icon">✦</div><div><div class="sk-name">CSS3</div><div class="sk-sub">Layouts, animations, responsive design</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⚡</div><div><div class="sk-name">JavaScript</div><div class="sk-sub">DOM manipulation, logic, interactivity</div></div></div>
+      </div>
+      <!-- DB -->
+      <div class="skills-grid" data-panel="db" role="tabpanel">
+        <div class="sk-card"><div class="sk-icon">⊕</div><div><div class="sk-name">SQL</div><div class="sk-sub">SELECT, JOIN, WHERE, aggregate functions, subqueries</div></div></div>
+        <div class="sk-card"><div class="sk-icon">◈</div><div><div class="sk-name">Database Design</div><div class="sk-sub">Entity-relationship diagrams, normalization, schema design</div></div></div>
+      </div>
+      <!-- SYSTEMS -->
+      <div class="skills-grid" data-panel="systems" role="tabpanel">
+        <div class="sk-card"><div class="sk-icon">🐧</div><div><div class="sk-name">Linux</div><div class="sk-sub">CLI, file system navigation, shell scripts, package management</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⌬</div><div><div class="sk-name">Networking</div><div class="sk-sub">Protocols, topologies, OSI/TCP-IP model</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⚙</div><div><div class="sk-name">Computer Architecture</div><div class="sk-sub">Memory hierarchy, CPU, assembly language basics</div></div></div>
+      </div>
+      <!-- TOOLS -->
+      <div class="skills-grid" data-panel="tools" role="tabpanel">
+        <div class="sk-card"><div class="sk-icon">◷</div><div><div class="sk-name">Git &amp; GitHub</div><div class="sk-sub">Version control, commits, branches, collaboration</div></div></div>
+        <div class="sk-card"><div class="sk-icon">◻</div><div><div class="sk-name">VS Code</div><div class="sk-sub">Primary code editor with extensions</div></div></div>
+        <div class="sk-card"><div class="sk-icon">⊞</div><div><div class="sk-name">NetBeans</div><div class="sk-sub">Java development IDE</div></div></div>
+      </div>
+    </div>
+
+    <!-- Currently Exploring -->
+    <div class="skills-exploring reveal" style="margin-top:64px;">
+      <div class="eyebrow" style="margin-bottom:22px;">CURRENTLY EXPLORING</div>
+      <div class="exploring-grid">
+        <div class="exp-card"><div class="exp-name">Spring Boot</div><p class="exp-note">Java backend framework — building on existing Java knowledge</p></div>
+        <div class="exp-card"><div class="exp-name">React</div><p class="exp-note">Component-based UI — natural next step from vanilla JS</p></div>
+        <div class="exp-card"><div class="exp-name">PostgreSQL</div><p class="exp-note">Production-grade relational database beyond SQL basics</p></div>
+        <div class="exp-card"><div class="exp-name">[ Add your own ]</div><p class="exp-note">Replace with technologies you're actually exploring right now</p></div>
+      </div>
+    </div>
+
+    <!-- System map -->
+    <div class="sysmap reveal" style="margin-top:72px;">
+      <div class="eyebrow" style="margin-bottom:22px;">INTERACTIVE SYSTEM MAP</div>
+      <p style="font-size:0.88rem;color:var(--c-dim);margin-bottom:28px;">Click any node to learn how it connects to my work.</p>
+      <div class="sysmap-canvas" style="height:270px; position:relative;">
+        <!-- Hub -->
+        <div class="sysmap-node hub" style="top:50%;left:50%;transform:translate(-50%,-50%);">Problem Solving</div>
+        <!-- Spokes -->
+        <div class="sysmap-node" style="top:5%;left:38%;">Software Dev</div>
+        <div class="sysmap-node" style="top:5%;left:56%;">Databases</div>
+        <div class="sysmap-node" style="top:38%;left:2%;">Java</div>
+        <div class="sysmap-node" style="top:38%;left:78%;">Networking</div>
+        <div class="sysmap-node" style="top:72%;left:8%;">HTML/CSS/JS</div>
+        <div class="sysmap-node" style="top:72%;left:72%;">Systems</div>
+        <div class="sysmap-node" style="top:80%;left:40%;">Git</div>
+      </div>
+      <div class="sysmap-desc" id="sysmapDesc">Click a node above to learn how it connects to my technical focus and coursework.</div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="container"><div class="footer-inner">
+    <div class="footer-brand"><div class="footer-logo">REABETSWE<span class="tld">.DEV</span></div><div class="footer-tag">Engineered with curiosity.</div></div>
+    <nav class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="lab.html">Lab</a><a href="experience.html">Journey</a><a href="contact.html">Contact</a></nav>
+    <div class="footer-right"><div class="footer-status"><span class="footer-status-dot"></span> SYSTEM ONLINE</div><div class="footer-copy">&copy; 2026 REABETSWE</div><button class="back-top">↑ TOP</button></div>
+  </div></div>
+</footer>
+
+<div id="easterEgg" role="dialog" aria-modal="true"><div class="ee-content"><pre class="ee-pre">  ██████╗ ███████╗ █████╗ ██████╗</pre><div class="ee-msg">🎮 You found it. Nice moves.</div><div class="ee-sub">↑ ↑ ↓ ↓ ← → ← → B A</div><button class="ee-close" id="eeClose">← BACK</button></div></div>
+
+<script src="../scripts/core.js"></script>
+<script src="../scripts/projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Projects — Reabetswe</title>
+  <meta name="description" content="Projects by Reabetswe — Java applications, database systems, web development, and networking projects."/>
+  <meta name="theme-color" content="#07090F"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles/tokens.css"/>
+  <link rel="stylesheet" href="../styles/pages.css"/>
+</head>
+<body>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+<div class="scan-line" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nl-name">REABETSWE</span><span class="nl-dot">.</span><span class="nl-tld">DEV</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html"   class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="skills.html"     class="nav-link">Skills</a></li><li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="lab.html"        class="nav-link">Code Lab</a></li><li><a href="experience.html" class="nav-link">Journey</a></li>
+      <li><a href="contact.html"    class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+      <button class="nav-cmd-btn" data-cmd aria-label="Command palette">⌘ <kbd class="cmd-kbd">⌃K</kbd></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><ul>
+  <li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li>
+  <li><a href="projects.html">Projects</a></li><li><a href="lab.html">Code Lab</a></li><li><a href="experience.html">Journey</a></li><li><a href="contact.html">Contact</a></li>
+</ul></div>
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true"><div class="cmd-box"><div class="cmd-input-row"><span class="cmd-icon">⌘</span><input type="text" class="cmd-input" id="cmdInput" placeholder="Go to page..." autocomplete="off"/></div><div class="cmd-results" id="cmdResults" role="listbox"></div><div class="cmd-footer"><span class="cmd-hint"><kbd class="cmd-key">↵</kbd> open</span><span class="cmd-hint"><kbd class="cmd-key">Esc</kbd> close</span></div></div></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">03 / SELECTED WORK</div>
+    <h1 class="page-h1">Built to Solve <span class="grad">Problems.</span></h1>
+    <p class="page-lead">Projects from coursework and self-directed learning. These are placeholders — replace them with your real work for maximum impact.</p>
+  </div>
+</section>
+
+<div class="page-body">
+  <div class="container">
+
+    <div class="proj-filters reveal" role="group" aria-label="Filter projects">
+      <button class="pf active" data-filter="all">All</button>
+      <button class="pf" data-filter="java">Java</button>
+      <button class="pf" data-filter="web">Web</button>
+      <button class="pf" data-filter="db">Database</button>
+      <button class="pf" data-filter="systems">Systems</button>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- PRJ-001 -->
+      <article class="proj-card reveal" data-cat="java">
+        <div class="proj-preview">
+          <div class="proj-code">public class Main {
+  public static void
+  main(String[] args) {
+    System.out.println(
+      "Hello, World!");
+  }
+}</div>
+          <span class="proj-pid">PRJ-001</span>
+          <span class="proj-badge">PLACEHOLDER</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Java Application</h3>
+          <p class="proj-desc">A Java-based console or desktop application. Replace with your actual project name and description.</p>
+          <div class="proj-tags"><span class="proj-tag">Java</span><span class="proj-tag">OOP</span><span class="proj-tag">NetBeans</span></div>
+          <div class="proj-actions">
+            <a href="project-detail.html?id=prj001" class="proj-btn pb-primary" data-cursor="OPEN">Details</a>
+            <a href="#" class="proj-btn pb-ghost" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRJ-002 -->
+      <article class="proj-card reveal" data-cat="db" data-delay="80">
+        <div class="proj-preview">
+          <div class="proj-code">SELECT s.name, c.name
+FROM students s
+JOIN enrollments e
+  ON s.id = e.s_id
+JOIN courses c
+  ON e.c_id = c.id
+WHERE s.year = 3;</div>
+          <span class="proj-pid">PRJ-002</span>
+          <span class="proj-badge">PLACEHOLDER</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Database Management System</h3>
+          <p class="proj-desc">A relational database project designed and queried with SQL. Replace with your actual DB project.</p>
+          <div class="proj-tags"><span class="proj-tag">SQL</span><span class="proj-tag">Database Design</span><span class="proj-tag">ERD</span></div>
+          <div class="proj-actions">
+            <a href="project-detail.html?id=prj002" class="proj-btn pb-primary" data-cursor="OPEN">Details</a>
+            <a href="#" class="proj-btn pb-ghost" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRJ-003 -->
+      <article class="proj-card reveal" data-cat="web" data-delay="160">
+        <div class="proj-preview">
+          <div class="proj-code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Project&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;...&lt;/main&gt;
+  &lt;/body&gt;</div>
+          <span class="proj-pid">PRJ-003</span>
+          <span class="proj-badge">PLACEHOLDER</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Web Development Project</h3>
+          <p class="proj-desc">A front-end or full-stack web project. Replace with your actual project name, purpose, and features.</p>
+          <div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JavaScript</span></div>
+          <div class="proj-actions">
+            <a href="project-detail.html?id=prj003" class="proj-btn pb-primary" data-cursor="OPEN">Details</a>
+            <a href="#" class="proj-btn pb-ghost" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRJ-004 -->
+      <article class="proj-card reveal" data-cat="systems" data-delay="240">
+        <div class="proj-preview">
+          <div class="proj-code">$ ifconfig eth0
+inet 192.168.1.10
+netmask 255.255.255.0
+$ ping 8.8.8.8
+PING ... 64 bytes
+time=12.3 ms</div>
+          <span class="proj-pid">PRJ-004</span>
+          <span class="proj-badge">PLACEHOLDER</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Networking / Systems Project</h3>
+          <p class="proj-desc">A networking, Linux, or computer architecture project. Replace with your actual project details.</p>
+          <div class="proj-tags"><span class="proj-tag">Linux</span><span class="proj-tag">Networking</span><span class="proj-tag">C</span></div>
+          <div class="proj-actions">
+            <a href="project-detail.html?id=prj004" class="proj-btn pb-primary" data-cursor="OPEN">Details</a>
+            <a href="#" class="proj-btn pb-ghost" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="reveal" style="margin-top:60px;padding:24px;background:var(--c-surface2);border:1px solid rgba(255,184,0,0.18);border-radius:var(--r-md);">
+      <p style="font-family:var(--font-mono);font-size:0.76rem;color:var(--c-yellow);line-height:1.65;">
+        📝 These are placeholder project cards. Replace each one in <code>projects.html</code> and <code>project-detail.html</code> with your real projects. A few well-documented projects are far more convincing than many empty cards.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer-inner">
+  <div class="footer-brand"><div class="footer-logo">REABETSWE<span class="tld">.DEV</span></div><div class="footer-tag">Engineered with curiosity.</div></div>
+  <nav class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="lab.html">Lab</a><a href="experience.html">Journey</a><a href="contact.html">Contact</a></nav>
+  <div class="footer-right"><div class="footer-status"><span class="footer-status-dot"></span> SYSTEM ONLINE</div><div class="footer-copy">&copy; 2026 REABETSWE</div><button class="back-top">↑ TOP</button></div>
+</div></div></footer>
+
+<div id="easterEgg" role="dialog" aria-modal="true"><div class="ee-content"><pre class="ee-pre">  ██████╗ ███████╗ █████╗ ██████╗</pre><div class="ee-msg">🎮 You found it.</div><div class="ee-sub">↑ ↑ ↓ ↓ ← → ← → B A</div><button class="ee-close" id="eeClose">← BACK</button></div></div>
+
+<script src="../scripts/core.js"></script>
+<script src="../scripts/projects.js"></script>
+</body>
+</html>

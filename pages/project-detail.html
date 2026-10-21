@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Project Details — Reabetswe</title>
+  <meta name="description" content="Detailed overview of a project by Reabetswe."/>
+  <meta name="theme-color" content="#07090F"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles/tokens.css"/>
+  <link rel="stylesheet" href="../styles/pages.css"/>
+</head>
+<body>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+<div class="scan-line" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nl-name">REABETSWE</span><span class="nl-dot">.</span><span class="nl-tld">DEV</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li><li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="lab.html" class="nav-link">Code Lab</a></li><li><a href="experience.html" class="nav-link">Journey</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+      <button class="nav-cmd-btn" data-cmd aria-label="Command palette">⌘ <kbd class="cmd-kbd">⌃K</kbd></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><ul>
+  <li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li>
+  <li><a href="projects.html">Projects</a></li><li><a href="lab.html">Code Lab</a></li><li><a href="experience.html">Journey</a></li><li><a href="contact.html">Contact</a></li>
+</ul></div>
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true"><div class="cmd-box"><div class="cmd-input-row"><span class="cmd-icon">⌘</span><input type="text" class="cmd-input" id="cmdInput" placeholder="Go to page..." autocomplete="off"/></div><div class="cmd-results" id="cmdResults" role="listbox"></div><div class="cmd-footer"><span class="cmd-hint"><kbd class="cmd-key">↵</kbd> open</span><span class="cmd-hint"><kbd class="cmd-key">Esc</kbd> close</span></div></div></div>
+
+<div class="page-body" style="padding-top:calc(var(--nav-h)+40px);">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="bc-sep">/</span>
+      <a href="projects.html">Projects</a><span class="bc-sep">/</span>
+      <span class="bc-cur" id="detailTitle">Project Details</span>
+    </div>
+
+    <!-- Detail header -->
+    <div class="proj-detail-header">
+      <div class="eyebrow" id="detailId">PRJ-001</div>
+      <h1 class="page-h1" id="detailH1">Project <span class="grad">Name</span></h1>
+      <div id="detailTags" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;"></div>
+    </div>
+
+    <!-- Detail grid -->
+    <div class="proj-detail-grid">
+      <div>
+        <div class="pd-section">
+          <div class="pd-label">PROJECT OVERVIEW</div>
+          <p class="pd-text" id="detailDesc">Replace this with your actual project description. Explain what the project does, who it's for, and why you built it.</p>
+        </div>
+        <div class="pd-section">
+          <div class="pd-label">PROBLEM &amp; GOALS</div>
+          <p class="pd-text" id="detailProblem">Describe the specific problem this project was designed to solve. What gap did it fill? What constraints did you work within?</p>
+        </div>
+        <div class="pd-section">
+          <div class="pd-label">APPROACH &amp; IMPLEMENTATION</div>
+          <p class="pd-text" id="detailApproach">Explain how you approached building this. What design decisions did you make? What architecture or patterns did you use?</p>
+        </div>
+        <div class="pd-section">
+          <div class="pd-label">KEY FEATURES</div>
+          <ul class="pd-list" id="detailFeatures">
+            <li>Feature 1 — Replace with actual features</li>
+            <li>Feature 2 — Describe what each feature does</li>
+            <li>Feature 3 — Focus on what makes it interesting</li>
+          </ul>
+        </div>
+        <div class="pd-section">
+          <div class="pd-label">CHALLENGES &amp; LESSONS LEARNED</div>
+          <p class="pd-text" id="detailLessons">What was harder than expected? What would you do differently? What did this project teach you about programming or problem-solving?</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel panel-accent" style="margin-bottom:20px;">
+          <div class="plabel">PROJECT INFO</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:grid;grid-template-columns:90px 1fr;gap:8px;font-family:var(--font-mono);font-size:0.72rem;">
+              <span style="color:var(--c-dim);">Status</span><span style="color:var(--c-mint);" id="detailStatus">Placeholder</span>
+              <span style="color:var(--c-dim);">Category</span><span id="detailCat">—</span>
+              <span style="color:var(--c-dim);">Year</span><span id="detailYear">Year 3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-accent" style="margin-bottom:20px;">
+          <div class="plabel">LINKS</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="#" class="btn btn-primary btn-sm" id="detailGhLink" target="_blank" rel="noopener">View Source Code</a>
+            <a href="#" class="btn btn-ghost btn-sm" id="detailDemoLink" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+          <p style="font-family:var(--font-mono);font-size:0.62rem;color:var(--c-dim);margin-top:12px;line-height:1.6;">Update the <code>href</code> attributes above with your real GitHub and live demo links.</p>
+        </div>
+
+        <div class="panel" style="background:rgba(255,184,0,0.04);border-color:rgba(255,184,0,0.18);">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--c-yellow);line-height:1.65;">📝 This is a template page. Each project should have its own <code>project-detail.html</code> or use URL parameters to load data dynamically.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next project nav -->
+    <div class="proj-nav">
+      <a href="projects.html" class="btn btn-ghost">← All Projects</a>
+      <a href="contact.html"  class="btn btn-outline">Interested? Get in touch →</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer-inner">
+  <div class="footer-brand"><div class="footer-logo">REABETSWE<span class="tld">.DEV</span></div><div class="footer-tag">Engineered with curiosity.</div></div>
+  <nav class="footer-nav"><a href="../index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="lab.html">Lab</a><a href="contact.html">Contact</a></nav>
+  <div class="footer-right"><div class="footer-copy">&copy; 2026 REABETSWE</div><button class="back-top">↑ TOP</button></div>
+</div></div></footer>
+
+<div id="easterEgg" role="dialog" aria-modal="true"><div class="ee-content"><pre class="ee-pre">  ██████╗ ███████╗ █████╗ ██████╗</pre><div class="ee-msg">🎮 You found it.</div><button class="ee-close" id="eeClose">← BACK</button></div></div>
+
+<script src="../scripts/core.js"></script>
+<script>
+// Populate detail page from URL params
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const PROJECTS = {
+    prj001: { id:'PRJ-001', title:'Java Application', tags:['Java','OOP','NetBeans'], cat:'Java', desc:'A Java-based console or desktop application project. Replace this placeholder with your actual project description once available.', problem:'Describe the problem this project was designed to solve.', approach:'Explain your design decisions and implementation approach.', features:['Feature 1 — replace with real features','Feature 2','Feature 3'], lessons:'What did this project teach you?', status:'Placeholder' },
+    prj002: { id:'PRJ-002', title:'Database Management System', tags:['SQL','Database Design','ERD'], cat:'Database', desc:'A relational database project designed and queried using SQL. Replace with your actual details.', problem:'What data problem does this system solve?', approach:'Describe your schema design and query approach.', features:['Schema design','Query optimisation','Data integrity rules'], lessons:'What did you learn about database design?', status:'Placeholder' },
+    prj003: { id:'PRJ-003', title:'Web Development Project', tags:['HTML','CSS','JavaScript'], cat:'Web', desc:'A front-end or full-stack web project. Replace with your actual project name, purpose, and features.', problem:'What user need does this project address?', approach:'Describe your layout, structure, and interactive features.', features:['Responsive layout','Interactive UI','Clean code'], lessons:'What did you learn about web development?', status:'Placeholder' },
+    prj004: { id:'PRJ-004', title:'Networking / Systems Project', tags:['Linux','Networking','C'], cat:'Systems', desc:'A networking, Linux, or computer architecture project. Replace with your actual technical details.', problem:'What systems challenge does this address?', approach:'Describe your technical implementation and tools used.', features:['Network configuration','Protocol implementation','System-level work'], lessons:'What did this project teach you about systems?', status:'Placeholder' },
+  };
+  const p = PROJECTS[id] || PROJECTS.prj001;
+  document.getElementById('detailTitle').textContent = p.title;
+  document.getElementById('detailId').textContent    = p.id;
+  document.getElementById('detailH1').innerHTML      = p.title.replace(/(\w+)$/, '<span class="grad">$1</span>');
+  document.getElementById('detailDesc').textContent  = p.desc;
+  document.getElementById('detailProblem').textContent = p.problem;
+  document.getElementById('detailApproach').textContent = p.approach;
+  document.getElementById('detailLessons').textContent  = p.lessons;
+  document.getElementById('detailStatus').textContent   = p.status;
+  document.getElementById('detailCat').textContent      = p.cat;
+  document.getElementById('detailTags').innerHTML = p.tags.map(t=>`<span class="chip">${t}</span>`).join('');
+  document.getElementById('detailFeatures').innerHTML = p.features.map(f=>`<li>${f}</li>`).join('');
+  document.title = `${p.title} — Reabetswe`;
+})();
+</script>
+</body>
+</html>
