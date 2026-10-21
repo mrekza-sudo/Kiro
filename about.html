@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Reabetswe — CS Student & Developer</title>
+  <meta name="description" content="Learn about Reabetswe, a third-year Computer Science student passionate about software development, databases, networking, and systems." />
+  <meta name="theme-color" content="#050608" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/about.css" />
+</head>
+<body>
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Reabetswe — Home">
+        REABETSWE<span class="logo-exe">.exe</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"  class="nav-link">home</a></li>
+        <li><a href="about.html" class="nav-link active">about</a></li>
+        <li><a href="contact.html" class="nav-link">contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="nav-status" aria-label="Status: online">
+          <span class="status-dot"></span><span>ONLINE</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html" class="active">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero" aria-label="Page title">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html" style="color:inherit;text-decoration:none;">root</a>
+        <span class="bc-sep">/</span>
+        <span class="bc-active">about</span>
+      </div>
+      <div class="page-h1-sub">01 / IDENTITY</div>
+      <h1 class="page-h1">Behind the Code.</h1>
+      <div class="page-accent-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about-page-section" aria-labelledby="ap-h2">
+    <div class="container">
+      <div class="about-page-grid">
+
+        <!-- LEFT -->
+        <div>
+          <!-- Bio terminal -->
+          <div class="bio-terminal-block reveal">
+            <div class="terminal-titlebar">
+              <span class="tb-dot tb-red"></span>
+              <span class="tb-dot tb-yellow"></span>
+              <span class="tb-dot tb-green"></span>
+              <span class="tb-title">cat ~/about/reabetswe.txt</span>
+            </div>
+            <div class="bio-body">
+              <div class="bio-line">
+                <span class="bio-prompt">&gt;</span>
+                <span class="bio-text">I'm <span class="hl">Reabetswe</span>, a third-year Computer Science student passionate about technology, software development, problem-solving, and understanding how systems work.</span>
+              </div>
+              <div class="bio-line">
+                <span class="bio-prompt">&gt;</span>
+                <span class="bio-text">I enjoy turning ideas into practical solutions, learning new technologies, and developing my skills through hands-on projects.</span>
+              </div>
+              <div class="bio-line">
+                <span class="bio-prompt">&gt;</span>
+                <span class="bio-text">My goal is to grow into a skilled software developer and contribute to meaningful technology projects.</span>
+              </div>
+              <div class="bio-line">
+                <span class="bio-prompt">&gt;</span>
+                <span class="bio-cursor">▋</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Journey timeline -->
+          <div class="journey-block reveal" data-delay="100">
+            <div class="block-label">ACADEMIC JOURNEY</div>
+            <div class="journey-timeline">
+              <div class="jt-item">
+                <div class="jt-dot"></div>
+                <div class="jt-year">Year 1</div>
+                <h3 class="jt-title">CS Foundations</h3>
+                <p class="jt-desc">Introduction to programming, computer science fundamentals, discrete mathematics, and logical thinking.</p>
+              </div>
+              <div class="jt-item">
+                <div class="jt-dot"></div>
+                <div class="jt-year">Year 2</div>
+                <h3 class="jt-title">Building Depth</h3>
+                <p class="jt-desc">Data structures, algorithms, databases, web development, and systems programming.</p>
+              </div>
+              <div class="jt-item current">
+                <div class="jt-dot"></div>
+                <div class="jt-year">Year 3 — NOW</div>
+                <h3 class="jt-title">Advanced Studies</h3>
+                <p class="jt-desc">Advanced systems, networking, software engineering, and real-world project development.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+          <!-- Profile card -->
+          <div class="profile-card-block reveal" data-delay="80">
+            <div class="pc-avatar-row">
+              <div class="pc-avatar">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="pglow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%"   stop-color="#087FFF" stop-opacity="0.15"/>
+                      <stop offset="100%" stop-color="#087FFF" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="60" cy="60" r="58" fill="url(#pglow)" stroke="#087FFF" stroke-width="0.8" opacity="0.4"/>
+                  <circle cx="60" cy="42" r="18" fill="none" stroke="#087FFF" stroke-width="1.5" opacity="0.9"/>
+                  <path d="M30 90 Q60 78 90 90 L92 115 H28 Z" fill="none" stroke="#087FFF" stroke-width="1.5" opacity="0.9"/>
+                  <circle cx="52" cy="40" r="2.5" fill="#087FFF" opacity="0.8"/>
+                  <circle cx="68" cy="40" r="2.5" fill="#087FFF" opacity="0.8"/>
+                  <path d="M52 50 Q60 56 68 50" fill="none" stroke="#087FFF" stroke-width="1.5" opacity="0.8"/>
+                </svg>
+              </div>
+              <div>
+                <div class="pc-name">REABETSWE</div>
+                <div class="pc-role">Computer Science Student</div>
+              </div>
+            </div>
+            <div class="pc-meta">
+              <div class="pcm-row"><span class="pcm-key">[NAME]</span>      <span class="pcm-val">Reabetswe</span></div>
+              <div class="pcm-row"><span class="pcm-key">[ROLE]</span>      <span class="pcm-val">CS Student</span></div>
+              <div class="pcm-row"><span class="pcm-key">[LEVEL]</span>     <span class="pcm-val">Third Year</span></div>
+              <div class="pcm-row"><span class="pcm-key">[FOCUS]</span>     <span class="pcm-val">Software Development</span></div>
+              <div class="pcm-row"><span class="pcm-key">[MISSION]</span>   <span class="pcm-val">Learn · Build · Improve</span></div>
+              <div class="pcm-row"><span class="pcm-key">[STATUS]</span>    <span class="pcm-val green">Continuously Learning</span></div>
+            </div>
+          </div>
+
+          <!-- Interests -->
+          <div class="interests-block reveal" data-delay="150">
+            <div class="block-label">AREAS OF INTEREST</div>
+            <div class="ib-grid">
+              <div class="ib-item"><span class="ib-icon">⟨/⟩</span> Software Dev</div>
+              <div class="ib-item"><span class="ib-icon">⊕</span> Databases</div>
+              <div class="ib-item"><span class="ib-icon">⌬</span> Networking</div>
+              <div class="ib-item"><span class="ib-icon">⚿</span> Cybersecurity</div>
+              <div class="ib-item"><span class="ib-icon">⚙</span> Systems</div>
+              <div class="ib-item"><span class="ib-icon">◻</span> Problem Solving</div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-block reveal" data-delay="200">
+            <div class="block-label">QUICK STATS</div>
+            <div class="stats-grid">
+              <div class="stat-box"><div class="stat-num">3<sup>rd</sup></div><div class="stat-lbl">Year of Study</div></div>
+              <div class="stat-box"><div class="stat-num">5+</div><div class="stat-lbl">Languages</div></div>
+              <div class="stat-box"><div class="stat-num">4+</div><div class="stat-lbl">Projects Built</div></div>
+              <div class="stat-box"><div class="stat-num">∞</div><div class="stat-lbl">Things to Learn</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="philosophy-block">
+        <div class="panel-label" style="justify-content:center;display:flex;margin-bottom:24px;">DEVELOPER PHILOSOPHY</div>
+        <div class="ph-grid">
+          <div class="ph-card reveal">
+            <span class="ph-icon">⌘</span>
+            <h3 class="ph-title">Build to Learn</h3>
+            <p class="ph-text">Every project is a chance to understand systems more deeply and apply knowledge in real-world contexts.</p>
+          </div>
+          <div class="ph-card reveal" data-delay="80">
+            <span class="ph-icon">⊞</span>
+            <h3 class="ph-title">Solve Real Problems</h3>
+            <p class="ph-text">Technology is most powerful when it creates practical solutions that genuinely improve experiences.</p>
+          </div>
+          <div class="ph-card reveal" data-delay="160">
+            <span class="ph-icon">⟳</span>
+            <h3 class="ph-title">Never Stop Learning</h3>
+            <p class="ph-text">The best developers stay curious, adapt to new tools, and continuously refine their craft.</p>
+          </div>
+          <div class="ph-card reveal" data-delay="240">
+            <span class="ph-icon">◈</span>
+            <h3 class="ph-title">Quality Over Speed</h3>
+            <p class="ph-text">Writing clean, readable, maintainable code is as important as writing code that works.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta-section" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Ready to collaborate?</h2>
+          <p>Whether it's a project, an internship opportunity, or just a conversation about tech — I'm always open to connect.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">GET IN TOUCH</a>
+          <a href="index.html#projects" class="btn btn-secondary">VIEW PROJECTS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">REABETSWE<span class="exe">.EXE</span></div>
+          <div class="footer-tagline">Designed with curiosity. Built with code.</div>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="index.html#projects">Projects</a>
+        </nav>
+        <div class="footer-right">
+          <div class="footer-status"><span class="footer-status-dot"></span> SYSTEM ONLINE</div>
+          <div class="footer-copy">&copy; 2026 REABETSWE</div>
+          <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑ BACK TO TOP</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/particles.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

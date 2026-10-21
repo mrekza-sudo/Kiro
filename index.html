@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reabetswe — Computer Science Student & Developer</title>
+  <meta name="description" content="Portfolio of Reabetswe, a third-year Computer Science student passionate about software development, databases, networking, and building practical digital solutions." />
+  <meta property="og:title"       content="Reabetswe — Developer Portfolio" />
+  <meta property="og:description" content="Third-year Computer Science student. Building the future, one line at a time." />
+  <meta property="og:type"        content="website" />
+  <meta name="theme-color"        content="#050608" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/home.css" />
+</head>
+<body>
+
+  <!-- ===================== BOOT SCREEN ===================== -->
+  <div id="bootScreen" role="dialog" aria-modal="true" aria-label="Loading portfolio">
+    <div class="boot-logo">REABETSWE<span>.EXE</span></div>
+    <div class="boot-lines" aria-live="polite">
+      <div class="boot-line"><span class="bl-dot"></span> Establishing secure connection...</div>
+      <div class="boot-line"><span class="bl-dot"></span> Loading developer profile...</div>
+      <div class="boot-line"><span class="bl-dot"></span> Initializing REABETSWE.EXE...</div>
+      <div class="boot-line"><span class="bl-dot"></span> SYSTEM ONLINE</div>
+    </div>
+    <div class="boot-bar-wrap"><div class="boot-bar"></div></div>
+    <button class="boot-skip" id="bootSkip">SKIP →</button>
+  </div>
+
+  <!-- Backgrounds -->
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Reabetswe — Home">
+        REABETSWE<span class="logo-exe">.exe</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#hero"      class="nav-link active" data-section="hero">home</a></li>
+        <li><a href="#about"     class="nav-link" data-section="about">about</a></li>
+        <li><a href="#skills"    class="nav-link" data-section="skills">skills</a></li>
+        <li><a href="#projects"  class="nav-link" data-section="projects">projects</a></li>
+        <li><a href="#codelab"   class="nav-link" data-section="codelab">lab</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">education</a></li>
+        <li><a href="#contact"   class="nav-link" data-section="contact">contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="nav-cmd-btn" data-cmd-palette aria-label="Open command palette (Ctrl+K)">
+          ⌘ Command <kbd class="cmd-kbd">⌃K</kbd>
+        </button>
+        <div class="nav-status" aria-label="Status: online">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#hero">home</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#codelab">code lab</a></li>
+      <li><a href="#education">education</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===================== COMMAND PALETTE ===================== -->
+  <div class="cmd-palette-overlay" id="cmdPalette" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="cmd-palette-box">
+      <div class="cmd-palette-input-row">
+        <span class="cp-icon">⌘</span>
+        <input type="text" class="cmd-palette-input" id="cpInput" placeholder="Search sections, pages..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="cpResults" />
+      </div>
+      <div class="cmd-palette-results" id="cpResults" role="listbox"></div>
+      <div class="cp-footer">
+        <span class="cp-hint"><kbd class="cp-key">↑↓</kbd> navigate</span>
+        <span class="cp-hint"><kbd class="cp-key">↵</kbd> select</span>
+        <span class="cp-hint"><kbd class="cp-key">Esc</kbd> close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-glow-left" aria-hidden="true"></div>
+    <div class="hero-glow-right" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-eyebrow" aria-hidden="true">
+          <span class="hero-eyebrow-line"></span>
+          THIRD-YEAR COMPUTER SCIENCE STUDENT
+        </div>
+
+        <h1 class="hero-name">REABETSWE</h1>
+
+        <p class="hero-title" aria-label="Title: Third-year Computer Science Student">
+          THIRD-YEAR COMPUTER SCIENCE STUDENT
+        </p>
+
+        <p class="hero-tagline">
+          Building the future,<br />
+          <span class="blue-word">one line at a time.</span>
+        </p>
+
+        <p class="hero-desc">
+          I explore code, systems, and ideas to turn complex problems
+          into practical digital solutions.
+        </p>
+
+        <!-- Mini terminal prompt -->
+        <div class="hero-prompt" aria-label="Terminal prompt">
+          <div class="hero-prompt-box">
+            <div class="hp-cmd">
+              <span class="hp-prompt">root@reabetswe:~$</span> whoami
+            </div>
+            <div class="hp-output">
+              Reabetswe — CS Student · Aspiring Software Developer<br />
+              Focus: Software Dev · Databases · Networking · Systems<span class="hp-cursor">▋</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">EXPLORE MY WORK</a>
+          <a href="about.html" class="btn btn-secondary">ABOUT THE DEVELOPER</a>
+          <a href="#contact" class="btn btn-outline">GET IN TOUCH</a>
+        </div>
+
+        <div class="hero-avail" aria-label="Available for opportunities">
+          <span class="avail-dot"></span>
+          AVAILABLE FOR OPPORTUNITIES
+        </div>
+      </div>
+
+      <!-- Right: Digital Core -->
+      <div class="hero-right" aria-hidden="true">
+        <div class="core-scene">
+          <!-- Orbiting rings -->
+          <div class="core-ring core-ring-1"></div>
+          <div class="core-ring core-ring-2"></div>
+          <div class="core-ring core-ring-3"></div>
+
+          <!-- Geometric core -->
+          <div class="core-center">
+            <svg class="core-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="#087FFF" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#087FFF" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="coreGlow">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Outer hexagon -->
+              <polygon points="90,12 162,51 162,129 90,168 18,129 18,51" fill="none" stroke="#087FFF" stroke-width="1" opacity="0.5" filter="url(#coreGlow)"/>
+              <!-- Inner hex -->
+              <polygon points="90,38 138,65 138,115 90,142 42,115 42,65" fill="none" stroke="#087FFF" stroke-width="1" opacity="0.35"/>
+              <!-- Centre diamond -->
+              <polygon points="90,58 118,90 90,122 62,90" fill="url(#coreGrad)" stroke="#00D9FF" stroke-width="1.2" opacity="0.9" filter="url(#coreGlow)"/>
+              <!-- Cross lines -->
+              <line x1="90" y1="12"  x2="90"  y2="168" stroke="#087FFF" stroke-width="0.4" opacity="0.2"/>
+              <line x1="18" y1="90"  x2="162" y2="90"  stroke="#087FFF" stroke-width="0.4" opacity="0.2"/>
+              <!-- Center dot -->
+              <circle cx="90" cy="90" r="4" fill="#087FFF" opacity="0.9" filter="url(#coreGlow)"/>
+              <circle cx="90" cy="90" r="12" fill="none" stroke="#087FFF" stroke-width="0.6" opacity="0.4"/>
+              <!-- Corner marks -->
+              <circle cx="90"  cy="12"  r="2.5" fill="#00D9FF" opacity="0.6"/>
+              <circle cx="162" cy="51"  r="2"   fill="#087FFF" opacity="0.5"/>
+              <circle cx="162" cy="129" r="2"   fill="#087FFF" opacity="0.5"/>
+              <circle cx="90"  cy="168" r="2.5" fill="#00D9FF" opacity="0.6"/>
+              <circle cx="18"  cy="51"  r="2"   fill="#087FFF" opacity="0.5"/>
+              <circle cx="18"  cy="129" r="2"   fill="#087FFF" opacity="0.5"/>
+            </svg>
+          </div>
+
+          <!-- Floating tech nodes -->
+          <div class="tech-node tn-1">Java</div>
+          <div class="tech-node tn-2">Python</div>
+          <div class="tech-node tn-3">SQL</div>
+          <div class="tech-node tn-4">Linux</div>
+          <div class="tech-node tn-5">C/C++</div>
+
+          <!-- Coordinate labels -->
+          <div class="core-coords cc-tl">0x4DEV</div>
+          <div class="core-coords cc-br">SYS::ACTIVE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hs-text">SCROLL</span>
+      <div class="hs-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== 01 / ABOUT ==================== -->
+  <section class="section about-section" id="about" aria-labelledby="about-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">01 / IDENTITY</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 id="about-h2">Behind the Code.</h2>
+          <p>
+            I'm Reabetswe, a third-year Computer Science student fascinated by how software works
+            at every level — from algorithms and databases to networks and operating systems.
+          </p>
+          <p>
+            My goal is to grow into a skilled software developer by building real projects,
+            embracing hard problems, and continuously learning. I believe the best code is the
+            kind that solves real problems clearly.
+          </p>
+          <div class="about-meta">
+            <div class="meta-row"><span class="meta-k">Developer</span>    <span class="meta-v">Reabetswe</span></div>
+            <div class="meta-row"><span class="meta-k">Classification</span><span class="meta-v">Computer Science Student</span></div>
+            <div class="meta-row"><span class="meta-k">Academic Level</span><span class="meta-v">Third Year</span></div>
+            <div class="meta-row"><span class="meta-k">Primary Focus</span> <span class="meta-v">Software Development</span></div>
+            <div class="meta-row"><span class="meta-k">Current Mission</span><span class="meta-v online">Learn · Build · Improve</span></div>
+          </div>
+          <div style="margin-top:28px;">
+            <a href="about.html" class="btn btn-outline">FULL PROFILE →</a>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="100">
+          <div class="about-code-panel">
+            <div class="terminal-titlebar">
+              <span class="tb-dot tb-red"></span>
+              <span class="tb-dot tb-yellow"></span>
+              <span class="tb-dot tb-green"></span>
+              <span class="tb-title">developer.js</span>
+            </div>
+            <div class="acp-body">
+<span class="code-cmt">// Developer profile object</span>
+<span class="code-kw">const</span> <span class="code-var">developer</span> <span class="code-punc">= {</span>
+  <span class="code-key">name</span><span class="code-punc">:</span>     <span class="code-str">"Reabetswe"</span><span class="code-punc">,</span>
+  <span class="code-key">role</span><span class="code-punc">:</span>     <span class="code-str">"CS Student, Year 3"</span><span class="code-punc">,</span>
+  <span class="code-key">skills</span><span class="code-punc">:</span>   <span class="code-punc">[</span><span class="code-str">"Java"</span><span class="code-punc">,</span> <span class="code-str">"Python"</span><span class="code-punc">,</span> <span class="code-str">"SQL"</span><span class="code-punc">],</span>
+  <span class="code-key">interests</span><span class="code-punc">:</span> <span class="code-punc">[</span>
+    <span class="code-str">"Software Dev"</span><span class="code-punc">,</span>
+    <span class="code-str">"Databases"</span><span class="code-punc">,</span>
+    <span class="code-str">"Networking"</span><span class="code-punc">,</span>
+  <span class="code-punc">],</span>
+  <span class="code-key">mindset</span><span class="code-punc">:</span>  <span class="code-str">"Always Learning"</span><span class="code-punc">,</span>
+  <span class="code-key">available</span><span class="code-punc">:</span> <span class="code-val">true</span><span class="code-punc">,</span>
+<span class="code-punc">};</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 02 / SKILLS ==================== -->
+  <section class="section skills-section" id="skills" aria-labelledby="skills-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">02 / CAPABILITIES</div>
+      <h2 class="section-h2 reveal" id="skills-h2">Tools of the Trade.</h2>
+      <p class="section-lead reveal">Technologies and tools that make up my current skill set.</p>
+
+      <!-- Category buttons -->
+      <div class="skills-categories reveal" role="tablist" aria-label="Skill categories">
+        <button class="skill-cat-btn active" data-cat="all"       role="tab" aria-selected="true"  aria-controls="panel-all">All</button>
+        <button class="skill-cat-btn"        data-cat="prog"      role="tab" aria-selected="false" aria-controls="panel-prog">Programming</button>
+        <button class="skill-cat-btn"        data-cat="web"       role="tab" aria-selected="false" aria-controls="panel-web">Web Dev</button>
+        <button class="skill-cat-btn"        data-cat="db"        role="tab" aria-selected="false" aria-controls="panel-db">Databases</button>
+        <button class="skill-cat-btn"        data-cat="systems"   role="tab" aria-selected="false" aria-controls="panel-systems">Systems</button>
+        <button class="skill-cat-btn"        data-cat="tools"     role="tab" aria-selected="false" aria-controls="panel-tools">Tools</button>
+      </div>
+
+      <!-- All -->
+      <div class="skills-panel active reveal" data-panel="all" id="panel-all" role="tabpanel">
+        <div class="skill-card"><div class="skill-icon-box">☕</div><div class="skill-info"><h4>Java</h4><p>Programming · OOP</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">🐍</div><div class="skill-info"><h4>Python</h4><p>Programming · Scripting</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">©</div><div class="skill-info"><h4>C / C++</h4><p>Systems · Programming</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⬡</div><div class="skill-info"><h4>HTML5</h4><p>Web · Markup</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">✦</div><div class="skill-info"><h4>CSS3</h4><p>Web · Styling</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⚡</div><div class="skill-info"><h4>JavaScript</h4><p>Web · Scripting</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⊕</div><div class="skill-info"><h4>SQL</h4><p>Databases · Queries</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">◈</div><div class="skill-info"><h4>Database Design</h4><p>ERD · Normalization</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">🐧</div><div class="skill-info"><h4>Linux</h4><p>OS · CLI</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⌬</div><div class="skill-info"><h4>Networking</h4><p>Protocols · Concepts</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⚙</div><div class="skill-info"><h4>Computer Architecture</h4><p>Systems · Hardware</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">◷</div><div class="skill-info"><h4>Git &amp; GitHub</h4><p>Version Control</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">◻</div><div class="skill-info"><h4>VS Code</h4><p>IDE · Dev Tools</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⊞</div><div class="skill-info"><h4>NetBeans</h4><p>IDE · Java Dev</p></div></div>
+      </div>
+
+      <!-- Programming -->
+      <div class="skills-panel" data-panel="prog" id="panel-prog" role="tabpanel">
+        <div class="skill-card"><div class="skill-icon-box">☕</div><div class="skill-info"><h4>Java</h4><p>Object-Oriented Programming</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">🐍</div><div class="skill-info"><h4>Python</h4><p>Scripting &amp; general use</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">©</div><div class="skill-info"><h4>C / C++</h4><p>Systems programming</p></div></div>
+      </div>
+
+      <!-- Web -->
+      <div class="skills-panel" data-panel="web" id="panel-web" role="tabpanel">
+        <div class="skill-card"><div class="skill-icon-box">⬡</div><div class="skill-info"><h4>HTML5</h4><p>Semantic markup</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">✦</div><div class="skill-info"><h4>CSS3</h4><p>Layouts, animations</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⚡</div><div class="skill-info"><h4>JavaScript</h4><p>DOM, logic, interactivity</p></div></div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skills-panel" data-panel="db" id="panel-db" role="tabpanel">
+        <div class="skill-card"><div class="skill-icon-box">⊕</div><div class="skill-info"><h4>SQL</h4><p>Queries, joins, aggregation</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">◈</div><div class="skill-info"><h4>Database Design</h4><p>ERD, normalization, schema</p></div></div>
+      </div>
+
+      <!-- Systems -->
+      <div class="skills-panel" data-panel="systems" id="panel-systems" role="tabpanel">
+        <div class="skill-card"><div class="skill-icon-box">🐧</div><div class="skill-info"><h4>Linux</h4><p>CLI, file system, scripts</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⌬</div><div class="skill-info"><h4>Networking</h4><p>Protocols, topologies</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⚙</div><div class="skill-info"><h4>Computer Architecture</h4><p>Memory, CPU, assembly basics</p></div></div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skills-panel" data-panel="tools" id="panel-tools" role="tabpanel">
+        <div class="skill-card"><div class="skill-icon-box">◷</div><div class="skill-info"><h4>Git &amp; GitHub</h4><p>Version control, collaboration</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">◻</div><div class="skill-info"><h4>VS Code</h4><p>Primary code editor</p></div></div>
+        <div class="skill-card"><div class="skill-icon-box">⊞</div><div class="skill-info"><h4>NetBeans</h4><p>Java development IDE</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 03 / PROJECTS ==================== -->
+  <section class="section projects-section" id="projects" aria-labelledby="projects-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">03 / SELECTED WORK</div>
+      <h2 class="section-h2 reveal" id="projects-h2">Proof Through Projects.</h2>
+      <p class="section-lead reveal">Projects built through coursework and self-directed learning. Replace these placeholders with your actual work.</p>
+
+      <!-- Filters -->
+      <div class="projects-filters reveal" role="group" aria-label="Filter projects">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="java">Java</button>
+        <button class="pf-btn" data-filter="web">Web</button>
+        <button class="pf-btn" data-filter="db">Database</button>
+        <button class="pf-btn" data-filter="systems">Systems</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- PRJ-001 -->
+        <article class="proj-card reveal" data-category="java">
+          <div class="proj-preview">
+            <div class="proj-preview-code">public class Main {
+  public static void
+  main(String[] args) {
+    System.out.println(
+      "Hello, World!");
+  }
+}</div>
+            <span class="proj-preview-id">PRJ-001</span>
+            <span class="proj-preview-badge">PLACEHOLDER</span>
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Java Application</h3>
+            <p class="proj-desc">A Java-based console or desktop application. Replace this placeholder with your actual project name and description once available.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Java</span>
+              <span class="proj-tag">OOP</span>
+              <span class="proj-tag">NetBeans</span>
+            </div>
+            <div class="proj-actions">
+              <button class="proj-btn proj-btn-primary" onclick="openProjectModal({id:'PRJ-001',title:'Java Application',desc:'Replace with your actual project description.',problem:'Describe the problem this project solves.',features:['Feature 1','Feature 2','Feature 3'],tags:['Java','OOP','NetBeans']})">Details</button>
+              <a href="#" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRJ-002 -->
+        <article class="proj-card reveal" data-category="db" data-delay="80">
+          <div class="proj-preview">
+            <div class="proj-preview-code">SELECT s.name, c.name
+FROM students s
+JOIN enrollments e
+  ON s.id = e.s_id
+JOIN courses c
+  ON e.c_id = c.id
+WHERE s.year = 3;</div>
+            <span class="proj-preview-id">PRJ-002</span>
+            <span class="proj-preview-badge">PLACEHOLDER</span>
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Database Management System</h3>
+            <p class="proj-desc">A relational database project designed and queried using SQL. Replace with your actual database project details.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">SQL</span>
+              <span class="proj-tag">Database Design</span>
+              <span class="proj-tag">ERD</span>
+            </div>
+            <div class="proj-actions">
+              <button class="proj-btn proj-btn-primary" onclick="openProjectModal({id:'PRJ-002',title:'Database Management System',desc:'Replace with your actual DB project description.',problem:'What data problem does this system solve?',features:['Schema design','Query optimisation','Data integrity'],tags:['SQL','Database Design','ERD']})">Details</button>
+              <a href="#" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRJ-003 -->
+        <article class="proj-card reveal" data-category="web" data-delay="160">
+          <div class="proj-preview">
+            <div class="proj-preview-code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Project&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;...&lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</div>
+            <span class="proj-preview-id">PRJ-003</span>
+            <span class="proj-preview-badge">PLACEHOLDER</span>
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Web Development Project</h3>
+            <p class="proj-desc">A front-end or full-stack web project. Replace with your actual project name, purpose, and features once available.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">HTML</span>
+              <span class="proj-tag">CSS</span>
+              <span class="proj-tag">JavaScript</span>
+            </div>
+            <div class="proj-actions">
+              <button class="proj-btn proj-btn-primary" onclick="openProjectModal({id:'PRJ-003',title:'Web Development Project',desc:'Replace with your actual web project details.',problem:'What user need does this address?',features:['Responsive layout','Interactive UI','Clean code'],tags:['HTML','CSS','JavaScript']})">Details</button>
+              <a href="#" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRJ-004 -->
+        <article class="proj-card reveal" data-category="systems" data-delay="240">
+          <div class="proj-preview">
+            <div class="proj-preview-code">$ ifconfig eth0
+inet 192.168.1.10
+netmask 255.255.255.0
+$ ping 8.8.8.8
+PING ... 64 bytes
+time=12.3 ms</div>
+            <span class="proj-preview-id">PRJ-004</span>
+            <span class="proj-preview-badge">PLACEHOLDER</span>
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Networking / Systems Project</h3>
+            <p class="proj-desc">A networking, Linux, or computer architecture project. Replace with your actual project name and technical details.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Linux</span>
+              <span class="proj-tag">Networking</span>
+              <span class="proj-tag">C</span>
+            </div>
+            <div class="proj-actions">
+              <button class="proj-btn proj-btn-primary" onclick="openProjectModal({id:'PRJ-004',title:'Networking / Systems Project',desc:'Replace with your actual systems project description.',problem:'What systems challenge does this address?',features:['Network configuration','Protocol implementation','System calls'],tags:['Linux','Networking','C']})">Details</button>
+              <a href="#" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">Source Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div class="proj-modal-overlay" id="projModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+    <div class="proj-modal">
+      <div class="pm-header">
+        <div>
+          <div class="pm-id" id="pmId"></div>
+          <h2 class="pm-title" id="pmTitle"></h2>
+        </div>
+        <button class="pm-close" onclick="closeProjectModal()" aria-label="Close project details">✕</button>
+      </div>
+      <div class="pm-body">
+        <div class="pm-section">
+          <div class="pm-label">DESCRIPTION</div>
+          <p class="pm-text" id="pmDesc"></p>
+        </div>
+        <div class="pm-section">
+          <div class="pm-label">PROBLEM SOLVED</div>
+          <p class="pm-text" id="pmProblem"></p>
+        </div>
+        <div class="pm-section">
+          <div class="pm-label">KEY FEATURES</div>
+          <ul class="pm-text" id="pmFeatures" style="padding-left:16px;line-height:2;"></ul>
+        </div>
+        <div class="pm-section">
+          <div class="pm-label">TECHNOLOGIES</div>
+          <div class="pm-tags" id="pmTags"></div>
+        </div>
+        <div class="pm-note">
+          📝 This is a placeholder card. Update the <code>onclick</code> data in <code>index.html</code> with your real project details.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 04 / CODE LAB ==================== -->
+  <section class="section codelab-section" id="codelab" aria-labelledby="lab-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">04 / CODE_LAB</div>
+      <h2 class="section-h2 reveal" id="lab-h2">Ideas in Execution.</h2>
+      <p class="section-lead reveal">Interactive programming demonstrations — try them directly in the browser.</p>
+
+      <div class="codelab-tabs reveal" role="tablist" aria-label="Code Lab demos">
+        <button class="cl-tab active" data-panel="cl-binary" role="tab" aria-selected="true"  aria-controls="cl-binary">Binary Converter</button>
+        <button class="cl-tab"        data-panel="cl-sql"    role="tab" aria-selected="false" aria-controls="cl-sql">SQL Simulator</button>
+        <button class="cl-tab"        data-panel="cl-sort"   role="tab" aria-selected="false" aria-controls="cl-sort">Sort Visualizer</button>
+      </div>
+
+      <!-- Demo 1: Binary Converter -->
+      <div class="cl-panel active reveal" id="cl-binary" role="tabpanel">
+        <div class="cl-layout">
+          <div class="cl-info">
+            <h3>Number Base Converter</h3>
+            <p>Convert numbers between decimal, binary, and hexadecimal — the fundamental number systems used in computing and low-level programming.</p>
+            <div class="cl-concept">
+              <div class="cl-concept-label">CONCEPT</div>
+              <p class="cl-concept-text">Computers represent all data in binary (base-2). Decimal is base-10 (human-readable), hexadecimal is base-16 (compact for memory addresses). Understanding these bases is essential for systems programming, networking, and computer architecture.</p>
+            </div>
+          </div>
+          <div class="cl-demo">
+            <div class="cl-demo-header">
+              <span class="cl-demo-dot"></span> base_converter.js
+            </div>
+            <div class="cl-demo-body">
+              <div class="cl-input-group">
+                <div class="cl-input-row">
+                  <span class="cl-label">Value</span>
+                  <input type="text" class="cl-input" id="clBinInput" placeholder="e.g. 42 or 101010" />
+                </div>
+                <div class="cl-input-row">
+                  <span class="cl-label">Convert</span>
+                  <select class="cl-select" id="clBinDir">
+                    <option value="dec-bin">Decimal → Binary &amp; Hex</option>
+                    <option value="bin-dec">Binary → Decimal &amp; Hex</option>
+                    <option value="dec-hex">Decimal → Hex &amp; Binary</option>
+                  </select>
+                </div>
+              </div>
+              <div class="cl-btn-row">
+                <button class="cl-run" id="clBinRun">▶ RUN</button>
+                <button class="cl-reset" id="clBinReset">↺ RESET</button>
+              </div>
+              <pre class="cl-output empty" id="clBinOutput">// Output will appear here...</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo 2: SQL Simulator -->
+      <div class="cl-panel" id="cl-sql" role="tabpanel">
+        <div class="cl-layout">
+          <div class="cl-info">
+            <h3>SQL Query Simulator</h3>
+            <p>Run SQL queries against a mock in-memory dataset. Try SELECT, WHERE conditions, and COUNT — no database server required.</p>
+            <div class="cl-concept">
+              <div class="cl-concept-label">AVAILABLE TABLES</div>
+              <p class="cl-concept-text" style="font-family:var(--font-mono);font-size:0.75rem;line-height:1.8;">
+                <strong style="color:var(--blue)">students</strong> — id, name, year, major, gpa<br />
+                <strong style="color:var(--blue)">courses</strong>  — id, name, credits, instructor<br /><br />
+                Try: <em>SELECT * FROM students WHERE year = 3</em>
+              </p>
+            </div>
+          </div>
+          <div class="cl-demo">
+            <div class="cl-demo-header">
+              <span class="cl-demo-dot"></span> sql_simulator.js
+            </div>
+            <div class="cl-demo-body">
+              <div class="cl-input-group">
+                <div class="cl-input-row" style="align-items:flex-start; flex-direction:column; gap:6px;">
+                  <span class="cl-label">SQL Query</span>
+                  <textarea class="cl-input" id="clSqlInput" rows="3" placeholder="SELECT * FROM students" style="width:100%;resize:vertical;min-height:70px;">SELECT * FROM students</textarea>
+                </div>
+              </div>
+              <div class="cl-btn-row">
+                <button class="cl-run" id="clSqlRun">▶ RUN</button>
+                <button class="cl-reset" id="clSqlReset">↺ RESET</button>
+              </div>
+              <pre class="cl-output empty" id="clSqlOutput">// Output will appear here...</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo 3: Sort Visualizer -->
+      <div class="cl-panel" id="cl-sort" role="tabpanel">
+        <div class="cl-layout">
+          <div class="cl-info">
+            <h3>Sorting Algorithm Visualizer</h3>
+            <p>Watch Bubble Sort or Selection Sort work through an array step by step. Cyan bars are being compared; green bars are in their final position.</p>
+            <div class="cl-concept">
+              <div class="cl-concept-label">CONCEPT</div>
+              <p class="cl-concept-text">Sorting algorithms are fundamental to CS — they appear in search engines, databases, and OS scheduling. Bubble Sort (O(n²)) repeatedly swaps adjacent elements; Selection Sort finds the minimum and moves it into place.</p>
+            </div>
+          </div>
+          <div class="cl-demo">
+            <div class="cl-demo-header">
+              <span class="cl-demo-dot"></span> sort_visualizer.js
+            </div>
+            <div class="cl-demo-body">
+              <div class="cl-input-group">
+                <div class="cl-input-row">
+                  <span class="cl-label">Algorithm</span>
+                  <select class="cl-select" id="clSortAlgo">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                  </select>
+                </div>
+              </div>
+              <div class="viz-bars" aria-label="Sorting visualization" role="img">
+                <div class="viz-bar"></div><div class="viz-bar"></div>
+                <div class="viz-bar"></div><div class="viz-bar"></div>
+                <div class="viz-bar"></div><div class="viz-bar"></div>
+                <div class="viz-bar"></div><div class="viz-bar"></div>
+                <div class="viz-bar"></div><div class="viz-bar"></div>
+              </div>
+              <div class="cl-btn-row" style="margin-top:12px;">
+                <button class="cl-run" id="clSortRun">▶ RUN</button>
+                <button class="cl-reset" id="clSortReset">↺ SHUFFLE</button>
+              </div>
+              <pre class="cl-output empty" id="clSortOutput">// Press RUN to start the sort visualizer.</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 05 / EDUCATION ==================== -->
+  <section class="section education-section" id="education" aria-labelledby="edu-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">05 / LEARNING_PATH</div>
+      <h2 class="section-h2 reveal" id="edu-h2">Currently Leveling Up.</h2>
+      <p class="section-lead reveal">An evolving academic journey in Computer Science.</p>
+
+      <div class="education-layout">
+        <!-- Timeline -->
+        <div class="edu-timeline reveal">
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div class="edu-year">Year 1</div>
+            <h3 class="edu-title">CS Foundations</h3>
+            <p class="edu-inst">[ Your Institution ] — Computer Science</p>
+            <p class="edu-desc">Introduction to programming, computer science fundamentals, discrete mathematics, and logical thinking.</p>
+            <div class="edu-tags">
+              <span class="edu-tag">Programming Basics</span>
+              <span class="edu-tag">Discrete Maths</span>
+              <span class="edu-tag">Problem Solving</span>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div class="edu-year">Year 2</div>
+            <h3 class="edu-title">Core Computer Science</h3>
+            <p class="edu-inst">[ Your Institution ] — Computer Science</p>
+            <p class="edu-desc">Data structures, algorithms, databases, web development fundamentals, and systems programming.</p>
+            <div class="edu-tags">
+              <span class="edu-tag">Data Structures</span>
+              <span class="edu-tag">Algorithms</span>
+              <span class="edu-tag">Databases</span>
+              <span class="edu-tag">Web Dev</span>
+            </div>
+          </div>
+
+          <div class="edu-item current">
+            <div class="edu-dot"></div>
+            <div class="edu-year">Year 3 — NOW</div>
+            <h3 class="edu-title">Advanced Studies</h3>
+            <p class="edu-inst">[ Your Institution ] — Computer Science</p>
+            <p class="edu-desc">Advanced systems, networking, software engineering principles, and real-world project development.</p>
+            <div class="edu-tags">
+              <span class="edu-tag">Networking</span>
+              <span class="edu-tag">Software Engineering</span>
+              <span class="edu-tag">Operating Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info column -->
+        <div class="edu-info-col reveal" data-delay="100">
+          <div class="edu-status-card">
+            <div class="esc-label">CURRENT STATUS</div>
+            <div class="esc-value">Year 3</div>
+            <div class="esc-sub">B.Sc. Computer Science — Active</div>
+          </div>
+
+          <div class="edu-interests-card panel">
+            <div class="panel-label">AREAS OF INTEREST</div>
+            <div class="edu-interests-grid">
+              <div class="edu-interest"><span class="edu-interest-icon">⟨/⟩</span> Software Dev</div>
+              <div class="edu-interest"><span class="edu-interest-icon">⊕</span> Databases</div>
+              <div class="edu-interest"><span class="edu-interest-icon">⌬</span> Networking</div>
+              <div class="edu-interest"><span class="edu-interest-icon">⚿</span> Cybersecurity</div>
+              <div class="edu-interest"><span class="edu-interest-icon">🐧</span> Linux / Systems</div>
+              <div class="edu-interest"><span class="edu-interest-icon">◻</span> Problem Solving</div>
+            </div>
+          </div>
+
+          <div class="panel" style="padding:22px 24px;">
+            <div class="panel-label">CERTIFICATIONS</div>
+            <p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--white-45);line-height:1.7;">
+              No certifications listed yet.<br/>
+              Replace this section when you earn certifications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 06 / CONTACT ==================== -->
+  <section class="section contact-section" id="contact" aria-labelledby="contact-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">06 / ESTABLISH_CONNECTION</div>
+      <h2 class="section-h2 reveal" id="contact-h2">Let's Build Something.</h2>
+      <p class="section-lead reveal">Have an interesting idea, a development opportunity, or a project worth exploring? I'd love to hear from you.</p>
+
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="contact-form-wrap reveal">
+          <div class="panel-label">SEND A MESSAGE</div>
+          <form class="contact-form" id="contactForm" novalidate data-endpoint="">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">NAME <span class="lbl-req">*</span></label>
+              <input type="text" id="cf-name" class="form-field" placeholder="Your name" autocomplete="name" required data-field="name" />
+              <span class="form-error" data-err="name"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">EMAIL <span class="lbl-req">*</span></label>
+              <input type="email" id="cf-email" class="form-field" placeholder="your@email.com" autocomplete="email" required data-field="email" />
+              <span class="form-error" data-err="email"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-subject">SUBJECT <span class="lbl-req">*</span></label>
+              <input type="text" id="cf-subject" class="form-field" placeholder="What's this about?" required data-field="subject" />
+              <span class="form-error" data-err="subject"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-msg">MESSAGE <span class="lbl-req">*</span></label>
+              <textarea id="cf-msg" class="form-field" rows="5" placeholder="Write your message..." required data-field="message"></textarea>
+              <span class="form-error" data-err="message"></span>
+            </div>
+            <button type="submit" class="form-submit" data-submit>
+              <span data-text>SEND MESSAGE</span>
+              <span class="fs-spinner" data-spinner></span>
+            </button>
+            <div class="form-status" data-status></div>
+            <div class="form-setup-note" data-setup-note style="display:none;">
+              ⚙ To receive messages, add a <code>data-endpoint</code> URL (e.g. Formspree, EmailJS) to the form element in <code>index.html</code>.
+            </div>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="contact-avail-card reveal" data-delay="100">
+            <div class="cac-label"><span class="cac-dot"></span> CURRENT STATUS</div>
+            <div class="cac-item">Available for internships</div>
+            <div class="cac-item">Open to collaborations</div>
+            <div class="cac-item">Open to networking</div>
+          </div>
+
+          <a href="mailto:your.email@example.com" class="contact-channel reveal" data-delay="150">
+            <div class="cc-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="cc-info">
+              <span class="cc-name">Email</span>
+              <span class="cc-val">your.email@example.com</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="contact-channel reveal" data-delay="200">
+            <div class="cc-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div class="cc-info">
+              <span class="cc-name">GitHub</span>
+              <span class="cc-val">github.com/yourusername</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="contact-channel reveal" data-delay="250">
+            <div class="cc-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="cc-info">
+              <span class="cc-name">LinkedIn</span>
+              <span class="cc-val">linkedin.com/in/yourprofile</span>
+            </div>
+            <span class="cc-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <div class="contact-resp-card reveal" data-delay="300">
+            <div class="resp-row"><span class="resp-k">Response Time</span><span class="resp-v">&lt; 24 hours</span></div>
+            <div class="resp-row"><span class="resp-k">Preferred Channel</span><span class="resp-v">Email</span></div>
+            <div class="resp-row"><span class="resp-k">Timezone</span><span class="resp-v">SAST (UTC+2)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TERMINAL ==================== -->
+  <section class="section terminal-section" id="terminal" aria-labelledby="terminal-h2">
+    <div class="container">
+      <div class="section-eyebrow reveal">// ACCESS_TERMINAL</div>
+      <h2 class="section-h2 reveal" id="terminal-h2" style="margin-bottom:8px;">Explore via Command Line.</h2>
+      <p class="section-lead reveal">An interactive terminal to navigate this portfolio. Try <code style="color:var(--blue);font-family:var(--font-mono)">help</code> to see all commands.</p>
+
+      <div class="terminal-wrap reveal">
+        <div class="terminal-chrome">
+          <div class="terminal-titlebar">
+            <span class="tb-dot tb-red"></span>
+            <span class="tb-dot tb-yellow"></span>
+            <span class="tb-dot tb-green"></span>
+            <span class="tb-title">reabetswe@portfolio:~ — interactive terminal</span>
+          </div>
+          <div class="it-body" id="terminalBody" role="log" aria-live="polite" aria-label="Terminal output">
+            <div class="it-line it-out-line">
+              <span class="it-text">Welcome. Type <strong style="color:var(--blue)">help</strong> to see available commands. Use ↑↓ for history. Tab to autocomplete.</span>
+            </div>
+          </div>
+          <div class="it-input-row">
+            <span class="t-prompt" aria-hidden="true">root@reabetswe:~$</span>
+            <label for="terminalInput" class="sr-only">Terminal command input</label>
+            <input type="text" class="it-input" id="terminalInput" placeholder="enter command..." autocomplete="off" spellcheck="false" aria-label="Terminal input" />
+          </div>
+        </div>
+      </div>
+
+      <div class="terminal-hints reveal" role="group" aria-label="Suggested terminal commands">
+        <button class="t-hint" data-cmd="help">help</button>
+        <button class="t-hint" data-cmd="about">about</button>
+        <button class="t-hint" data-cmd="skills">skills</button>
+        <button class="t-hint" data-cmd="projects">projects</button>
+        <button class="t-hint" data-cmd="contact">contact</button>
+        <button class="t-hint" data-cmd="education">education</button>
+        <button class="t-hint" data-cmd="clear">clear</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">REABETSWE<span class="exe">.EXE</span></div>
+          <div class="footer-tagline">Designed with curiosity. Built with code.</div>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#codelab">Lab</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+          <a href="about.html">Full About</a>
+        </nav>
+        <div class="footer-right">
+          <div class="footer-status">
+            <span class="footer-status-dot"></span>
+            SYSTEM ONLINE
+          </div>
+          <div class="footer-copy">&copy; 2026 REABETSWE</div>
+          <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+            ↑ BACK TO TOP
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Screen-reader only helper class -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}</style>
+
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/particles.js"></script>
+  <script src="scripts/boot.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/home.js"></script>
+  <script src="scripts/contact.js"></script>
+</body>
+</html>

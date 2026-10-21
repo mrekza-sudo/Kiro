@@ -1,0 +1,278 @@
+/* ====================================================================
+   CONTACT.CSS — contact.html specific styles
+   REABETSWE.EXE // SYSTEM OVERRIDE
+   ==================================================================== */
+
+/* (contact page form/info/layout all lives in home.css .contact-section
+   as those styles are reused from the single-page index. This file
+   provides the standalone contact page wrapper and any page-specific overrides) */
+
+.contact-page-section {
+  padding: 80px 0 100px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Intro ping terminal */
+.ping-terminal {
+  background: rgba(7,8,15,0.9);
+  border: 1px solid var(--blue-border);
+  border-radius: 10px;
+  max-width: 680px;
+  margin-bottom: 52px;
+  overflow: hidden;
+}
+.ping-body {
+  padding: 18px 22px;
+}
+.ping-line {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.ping-line:last-child { margin-bottom: 0; }
+.ping-prompt { color: var(--blue); flex-shrink: 0; }
+.ping-text   { color: var(--white-70); }
+.ping-cursor { color: var(--blue); animation: blink 1s step-end infinite; }
+
+/* Two-column layout mirroring home.css .contact-grid */
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Form panel */
+.cpg-form-panel {
+  background: rgba(8,14,27,0.8);
+  border: 1px solid var(--blue-border);
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.cp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cpf-group { display: flex; flex-direction: column; gap: 7px; }
+.cpf-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--white-45);
+  letter-spacing: 0.1em;
+}
+.cpf-label .req { color: var(--blue); }
+.cpf-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 5px;
+  background: rgba(0,0,0,0.35);
+  overflow: hidden;
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+}
+.cpf-input-wrap:focus-within {
+  border-color: var(--blue-border-hi);
+  box-shadow: 0 0 0 3px rgba(8,127,255,0.08);
+}
+.cpf-prefix {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--blue);
+  padding: 11px 10px 11px 14px;
+  background: rgba(8,127,255,0.05);
+  border-right: 1px solid rgba(8,127,255,0.12);
+  flex-shrink: 0;
+}
+.cpf-field {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--white);
+  padding: 11px 14px;
+  caret-color: var(--blue);
+  width: 100%;
+}
+.cpf-field::placeholder { color: var(--white-20); }
+.cpf-textarea-wrap { align-items: flex-start; }
+.cpf-textarea-prefix { padding-top: 11px; }
+.cpf-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+.cpf-error {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--red);
+  display: none;
+}
+.cpf-error.show { display: block; }
+.cpf-input-wrap.invalid { border-color: rgba(255,71,87,0.4) !important; }
+
+.cpf-submit {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 14px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all var(--t-base);
+  box-shadow: 0 0 20px rgba(8,127,255,0.28);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.cpf-submit:hover { background: var(--blue-bright); box-shadow: 0 0 28px rgba(8,127,255,0.5); transform: translateY(-1px); }
+.cpf-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.cpf-submit:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+.cpf-spinner {
+  display: none;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+.cpf-spinner.show { display: block; }
+
+.cpf-status {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 12px 16px;
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.5;
+}
+.cpf-status.success { display: flex; color: var(--green); border: 1px solid rgba(0,232,135,0.2); background: rgba(0,232,135,0.05); }
+.cpf-status.error   { display: flex; color: var(--red);   border: 1px solid rgba(255,71,87,0.2);  background: rgba(255,71,87,0.05);  }
+.cpf-setup-note {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--yellow);
+  border: 1px solid rgba(255,184,0,0.2);
+  padding: 10px 14px;
+  border-radius: 5px;
+  background: rgba(255,184,0,0.04);
+  line-height: 1.5;
+}
+
+/* Info column */
+.cpg-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cpg-channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  background: rgba(8,14,27,0.7);
+  text-decoration: none;
+  transition: all var(--t-base);
+}
+.cpg-channel:hover { border-color: var(--blue-border); background: var(--blue-glow); transform: translateX(4px); }
+.cpg-channel:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.cpg-icon {
+  width: 40px; height: 40px;
+  border-radius: 7px;
+  border: 1px solid var(--blue-border);
+  background: var(--blue-glow);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.cpg-info { flex: 1; overflow: hidden; }
+.cpg-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--white-90);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.cpg-val {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--white-45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cpg-arrow { color: var(--blue); opacity: 0; transition: opacity var(--t-base); }
+.cpg-channel:hover .cpg-arrow { opacity: 1; }
+
+.cpg-avail {
+  background: rgba(8,14,27,0.7);
+  border: 1px solid rgba(0,232,135,0.15);
+  border-radius: 8px;
+  padding: 18px;
+}
+.cpga-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 7px;
+}
+.cpga-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+.cpga-item {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--white-70);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; gap: 8px;
+}
+.cpga-item:last-child { border-bottom: none; }
+.cpga-item::before { content: '↳'; color: var(--green); opacity: 0.6; font-size: 0.7rem; }
+
+.cpg-resp {
+  background: rgba(8,14,27,0.7);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 18px;
+}
+.cpgr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.cpgr-row:last-child { border-bottom: none; }
+.cpgr-k { color: var(--white-45); }
+.cpgr-v { color: var(--blue); }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .contact-page-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 520px) {
+  .cpg-form-panel { padding: 22px; }
+}
