@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reabetswe — Computer Science Student & Developer</title>
-  <meta name="description" content="Portfolio of Reabetswe, a third-year Computer Science student passionate about software development, databases, networking, and building practical digital solutions." />
-  <meta property="og:title"       content="Reabetswe — Developer Portfolio" />
-  <meta property="og:description" content="Third-year Computer Science student. Building the future, one line at a time." />
+  <title>Reabetswe — Beyond the Code</title>
+  <meta name="description" content="Reabetswe — Third-year Computer Science student. Curiosity builds the future. Software development, databases, networking, systems." />
+  <meta property="og:title"       content="Reabetswe — Beyond the Code" />
+  <meta property="og:description" content="Curiosity builds the future. Third-year CS student building practical digital solutions." />
   <meta property="og:type"        content="website" />
-  <meta name="theme-color"        content="#050608" />
+  <meta name="theme-color"        content="#0B1020" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,12 +20,12 @@
 
   <!-- ===================== BOOT SCREEN ===================== -->
   <div id="bootScreen" role="dialog" aria-modal="true" aria-label="Loading portfolio">
-    <div class="boot-logo">REABETSWE<span>.EXE</span></div>
+    <div class="boot-logo">REABETSWE<span class="bl-ext"> — BEYOND THE CODE</span></div>
     <div class="boot-lines" aria-live="polite">
-      <div class="boot-line"><span class="bl-dot"></span> Establishing secure connection...</div>
+      <div class="boot-line"><span class="bl-dot"></span> Initializing curiosity engine...</div>
       <div class="boot-line"><span class="bl-dot"></span> Loading developer profile...</div>
-      <div class="boot-line"><span class="bl-dot"></span> Initializing REABETSWE.EXE...</div>
-      <div class="boot-line"><span class="bl-dot"></span> SYSTEM ONLINE</div>
+      <div class="boot-line"><span class="bl-dot"></span> Compiling creative stack...</div>
+      <div class="boot-line"><span class="bl-dot"></span> Ready. Welcome.</div>
     </div>
     <div class="boot-bar-wrap"><div class="boot-bar"></div></div>
     <button class="boot-skip" id="bootSkip">SKIP →</button>
@@ -40,7 +40,7 @@
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Reabetswe — Home">
-        REABETSWE<span class="logo-exe">.exe</span>
+        <span class="nl-name"></span>REABETSWE</span><span class="logo-exe">.exe</span>
       </a>
 
       <ul class="nav-links" role="list">
@@ -100,43 +100,42 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero" aria-label="Introduction">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="hero-vignette" aria-hidden="true"></div>
-    <div class="hero-glow-left" aria-hidden="true"></div>
-    <div class="hero-glow-right" aria-hidden="true"></div>
+    <div class="hero-beam-1" aria-hidden="true"></div>
+    <div class="hero-beam-2" aria-hidden="true"></div>
 
     <div class="hero-inner">
       <!-- Left -->
       <div class="hero-left">
         <div class="hero-eyebrow" aria-hidden="true">
-          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-dot"></span>
           THIRD-YEAR COMPUTER SCIENCE STUDENT
         </div>
 
         <h1 class="hero-name">REABETSWE</h1>
 
-        <p class="hero-title" aria-label="Title: Third-year Computer Science Student">
-          THIRD-YEAR COMPUTER SCIENCE STUDENT
-        </p>
-
-        <p class="hero-tagline">
-          Building the future,<br />
-          <span class="blue-word">one line at a time.</span>
-        </p>
+        <div class="hero-tagline-wrap">
+          <p class="hero-tagline">
+            Curiosity<br /><span class="accent-word">builds the future.</span>
+          </p>
+          <p class="hero-sub-tagline">BEYOND THE CODE</p>
+        </div>
 
         <p class="hero-desc">
           I explore code, systems, and ideas to turn complex problems
-          into practical digital solutions.
+          into practical digital solutions — one commit at a time.
         </p>
 
         <!-- Mini terminal prompt -->
         <div class="hero-prompt" aria-label="Terminal prompt">
           <div class="hero-prompt-box">
             <div class="hp-cmd">
-              <span class="hp-prompt">root@reabetswe:~$</span> whoami
+              <span class="hp-prompt">reabetswe@portfolio:~$</span> whoami
             </div>
             <div class="hp-output">
-              Reabetswe — CS Student · Aspiring Software Developer<br />
+              CS Student · Year 3 · Aspiring Software Developer<br />
               Focus: Software Dev · Databases · Networking · Systems<span class="hp-cursor">▋</span>
             </div>
           </div>
@@ -154,59 +153,88 @@
         </div>
       </div>
 
-      <!-- Right: Digital Core -->
+      <!-- Right: Colorful Digital Orb -->
       <div class="hero-right" aria-hidden="true">
-        <div class="core-scene">
-          <!-- Orbiting rings -->
-          <div class="core-ring core-ring-1"></div>
-          <div class="core-ring core-ring-2"></div>
-          <div class="core-ring core-ring-3"></div>
+        <div class="orb-scene">
+          <!-- Gradient rings -->
+          <div class="orb-ring orb-ring-1"></div>
+          <div class="orb-ring orb-ring-2"></div>
+          <div class="orb-ring orb-ring-3"></div>
 
-          <!-- Geometric core -->
-          <div class="core-center">
-            <svg class="core-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <!-- Core geometric SVG -->
+          <div class="orb-core">
+            <svg class="orb-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stop-color="#087FFF" stop-opacity="0.18"/>
-                  <stop offset="100%" stop-color="#087FFF" stop-opacity="0"/>
+                <radialGradient id="orbGrad1" cx="30%" cy="30%" r="60%">
+                  <stop offset="0%"   stop-color="#3478F6" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#8857FF" stop-opacity="0.1"/>
                 </radialGradient>
-                <filter id="coreGlow">
-                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                <radialGradient id="orbGrad2" cx="70%" cy="70%" r="60%">
+                  <stop offset="0%"   stop-color="#31D5FF" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#66F2C2" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="hex1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#3478F6"/>
+                  <stop offset="50%"  stop-color="#8857FF"/>
+                  <stop offset="100%" stop-color="#31D5FF"/>
+                </linearGradient>
+                <linearGradient id="hex2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="#31D5FF"/>
+                  <stop offset="100%" stop-color="#66F2C2"/>
+                </linearGradient>
+                <filter id="orbGlow">
+                  <feGaussianBlur stdDeviation="5" result="blur"/>
                   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
               </defs>
+
+              <!-- Ambient fill -->
+              <circle cx="100" cy="100" r="95" fill="url(#orbGrad1)" opacity="0.7"/>
+              <circle cx="100" cy="100" r="80" fill="url(#orbGrad2)" opacity="0.5"/>
+
               <!-- Outer hexagon -->
-              <polygon points="90,12 162,51 162,129 90,168 18,129 18,51" fill="none" stroke="#087FFF" stroke-width="1" opacity="0.5" filter="url(#coreGlow)"/>
-              <!-- Inner hex -->
-              <polygon points="90,38 138,65 138,115 90,142 42,115 42,65" fill="none" stroke="#087FFF" stroke-width="1" opacity="0.35"/>
-              <!-- Centre diamond -->
-              <polygon points="90,58 118,90 90,122 62,90" fill="url(#coreGrad)" stroke="#00D9FF" stroke-width="1.2" opacity="0.9" filter="url(#coreGlow)"/>
-              <!-- Cross lines -->
-              <line x1="90" y1="12"  x2="90"  y2="168" stroke="#087FFF" stroke-width="0.4" opacity="0.2"/>
-              <line x1="18" y1="90"  x2="162" y2="90"  stroke="#087FFF" stroke-width="0.4" opacity="0.2"/>
-              <!-- Center dot -->
-              <circle cx="90" cy="90" r="4" fill="#087FFF" opacity="0.9" filter="url(#coreGlow)"/>
-              <circle cx="90" cy="90" r="12" fill="none" stroke="#087FFF" stroke-width="0.6" opacity="0.4"/>
-              <!-- Corner marks -->
-              <circle cx="90"  cy="12"  r="2.5" fill="#00D9FF" opacity="0.6"/>
-              <circle cx="162" cy="51"  r="2"   fill="#087FFF" opacity="0.5"/>
-              <circle cx="162" cy="129" r="2"   fill="#087FFF" opacity="0.5"/>
-              <circle cx="90"  cy="168" r="2.5" fill="#00D9FF" opacity="0.6"/>
-              <circle cx="18"  cy="51"  r="2"   fill="#087FFF" opacity="0.5"/>
-              <circle cx="18"  cy="129" r="2"   fill="#087FFF" opacity="0.5"/>
+              <polygon points="100,14 178,57 178,143 100,186 22,143 22,57"
+                fill="none" stroke="url(#hex1)" stroke-width="1.2" opacity="0.65" filter="url(#orbGlow)"/>
+              <!-- Mid hexagon -->
+              <polygon points="100,38 158,71 158,129 100,162 42,129 42,71"
+                fill="none" stroke="url(#hex2)" stroke-width="0.8" opacity="0.4"/>
+              <!-- Inner hexagon -->
+              <polygon points="100,58 140,81 140,119 100,142 60,119 60,81"
+                fill="none" stroke="#3478F6" stroke-width="0.6" opacity="0.25"/>
+
+              <!-- Central diamond -->
+              <polygon points="100,70 128,100 100,130 72,100"
+                fill="url(#orbGrad1)" stroke="url(#hex1)" stroke-width="1.5"
+                opacity="0.95" filter="url(#orbGlow)"/>
+
+              <!-- Inner circle -->
+              <circle cx="100" cy="100" r="16" fill="url(#orbGrad2)" stroke="url(#hex2)" stroke-width="1" opacity="0.8"/>
+              <circle cx="100" cy="100" r="5" fill="#31D5FF" opacity="0.9" filter="url(#orbGlow)"/>
+
+              <!-- Axis lines -->
+              <line x1="100" y1="14" x2="100" y2="186" stroke="#3478F6" stroke-width="0.4" opacity="0.18"/>
+              <line x1="22"  y1="100" x2="178" y2="100" stroke="#8857FF" stroke-width="0.4" opacity="0.15"/>
+
+              <!-- Vertex dots -->
+              <circle cx="100" cy="14"  r="3" fill="#66F2C2" opacity="0.9" filter="url(#orbGlow)"/>
+              <circle cx="178" cy="57"  r="2.5" fill="#3478F6" opacity="0.7"/>
+              <circle cx="178" cy="143" r="2.5" fill="#8857FF" opacity="0.7"/>
+              <circle cx="100" cy="186" r="3" fill="#31D5FF" opacity="0.9" filter="url(#orbGlow)"/>
+              <circle cx="22"  cy="57"  r="2.5" fill="#3478F6" opacity="0.7"/>
+              <circle cx="22"  cy="143" r="2.5" fill="#8857FF" opacity="0.7"/>
             </svg>
           </div>
 
-          <!-- Floating tech nodes -->
-          <div class="tech-node tn-1">Java</div>
-          <div class="tech-node tn-2">Python</div>
-          <div class="tech-node tn-3">SQL</div>
-          <div class="tech-node tn-4">Linux</div>
-          <div class="tech-node tn-5">C/C++</div>
+          <!-- Floating skill pills -->
+          <div class="orb-pill op-1">Java</div>
+          <div class="orb-pill op-2">Python</div>
+          <div class="orb-pill op-3">SQL</div>
+          <div class="orb-pill op-4">Linux</div>
+          <div class="orb-pill op-5">C/C++</div>
 
-          <!-- Coordinate labels -->
-          <div class="core-coords cc-tl">0x4DEV</div>
-          <div class="core-coords cc-br">SYS::ACTIVE</div>
+          <!-- Corner coords -->
+          <div class="orb-coord oc-tl">0x4DEV</div>
+          <div class="orb-coord oc-br">v3.0.0</div>
         </div>
       </div>
     </div>
@@ -223,7 +251,7 @@
       <div class="section-eyebrow reveal">01 / IDENTITY</div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <h2 id="about-h2">Behind the Code.</h2>
+          <h2 id="about-h2">Behind the <span class="grad-text"></span>Code.</span></h2>
           <p>
             I'm Reabetswe, a third-year Computer Science student fascinated by how software works
             at every level — from algorithms and databases to networks and operating systems.
@@ -278,7 +306,7 @@
   <section class="section skills-section" id="skills" aria-labelledby="skills-h2">
     <div class="container">
       <div class="section-eyebrow reveal">02 / CAPABILITIES</div>
-      <h2 class="section-h2 reveal" id="skills-h2">Tools of the Trade.</h2>
+      <h2 class="section-h2 reveal" id="skills-h2">Tools of the <span class="grad-text"></span>Trade.</span></h2>
       <p class="section-lead reveal">Technologies and tools that make up my current skill set.</p>
 
       <!-- Category buttons -->
@@ -349,7 +377,7 @@
   <section class="section projects-section" id="projects" aria-labelledby="projects-h2">
     <div class="container">
       <div class="section-eyebrow reveal">03 / SELECTED WORK</div>
-      <h2 class="section-h2 reveal" id="projects-h2">Proof Through Projects.</h2>
+      <h2 class="section-h2 reveal" id="projects-h2">Proof Through <span class="grad-text"></span>Projects.</span></h2>
       <p class="section-lead reveal">Projects built through coursework and self-directed learning. Replace these placeholders with your actual work.</p>
 
       <!-- Filters -->
@@ -516,7 +544,7 @@ time=12.3 ms</div>
   <section class="section codelab-section" id="codelab" aria-labelledby="lab-h2">
     <div class="container">
       <div class="section-eyebrow reveal">04 / CODE_LAB</div>
-      <h2 class="section-h2 reveal" id="lab-h2">Ideas in Execution.</h2>
+      <h2 class="section-h2 reveal" id="lab-h2">Ideas in <span class="grad-text"></span>Execution.</span></h2>
       <p class="section-lead reveal">Interactive programming demonstrations — try them directly in the browser.</p>
 
       <div class="codelab-tabs reveal" role="tablist" aria-label="Code Lab demos">
@@ -649,7 +677,7 @@ time=12.3 ms</div>
   <section class="section education-section" id="education" aria-labelledby="edu-h2">
     <div class="container">
       <div class="section-eyebrow reveal">05 / LEARNING_PATH</div>
-      <h2 class="section-h2 reveal" id="edu-h2">Currently Leveling Up.</h2>
+      <h2 class="section-h2 reveal" id="edu-h2">Currently <span class="grad-text"></span>Leveling Up.</span></h2>
       <p class="section-lead reveal">An evolving academic journey in Computer Science.</p>
 
       <div class="education-layout">
@@ -732,7 +760,7 @@ time=12.3 ms</div>
   <section class="section contact-section" id="contact" aria-labelledby="contact-h2">
     <div class="container">
       <div class="section-eyebrow reveal">06 / ESTABLISH_CONNECTION</div>
-      <h2 class="section-h2 reveal" id="contact-h2">Let's Build Something.</h2>
+      <h2 class="section-h2 reveal" id="contact-h2">Let's Build <span class="grad-text"></span>Something.</span></h2>
       <p class="section-lead reveal">Have an interesting idea, a development opportunity, or a project worth exploring? I'd love to hear from you.</p>
 
       <div class="contact-grid">
@@ -827,7 +855,7 @@ time=12.3 ms</div>
   <section class="section terminal-section" id="terminal" aria-labelledby="terminal-h2">
     <div class="container">
       <div class="section-eyebrow reveal">// ACCESS_TERMINAL</div>
-      <h2 class="section-h2 reveal" id="terminal-h2" style="margin-bottom:8px;">Explore via Command Line.</h2>
+      <h2 class="section-h2 reveal" id="terminal-h2" style="margin-bottom:8px;">Explore via <span class="grad-text"></span>Command Line.</span></h2>
       <p class="section-lead reveal">An interactive terminal to navigate this portfolio. Try <code style="color:var(--blue);font-family:var(--font-mono)">help</code> to see all commands.</p>
 
       <div class="terminal-wrap reveal">
@@ -868,8 +896,8 @@ time=12.3 ms</div>
     <div class="container">
       <div class="footer-inner">
         <div>
-          <div class="footer-logo">REABETSWE<span class="exe">.EXE</span></div>
-          <div class="footer-tagline">Designed with curiosity. Built with code.</div>
+          <div class="footer-logo">REABETSWE<span class="exe"> — BEYOND THE CODE</span></div>
+          <div class="footer-tagline">Curiosity builds the future.</div>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="#hero">Home</a>
